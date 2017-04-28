@@ -1,0 +1,16 @@
+{
+  "name": "adapt-list",
+  "version": "2.0.2",
+  "framework": "^2.0.0",
+  "homepage": "",
+  "issues": "",
+  "displayName" : "List",
+  "component" : "list",
+  "description": "A text component in which you can add list items.",
+  "main": "/js/adapt-list.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPLv3"
+}
