@@ -10,9 +10,9 @@ define(function(require) {
         },
 
         postRender: function() {
-            /* option to animate list items - excpet when accessibility is enabled */
+            /* option to animate list items - excpet when accessibility is enabled or touch device */
             if(this.model.get('_animateList') === true) {
-                if (!Adapt.config.get("_accessibility")._isActive) {
+                if (!Adapt.config.get("_accessibility")._isActive && !$('html').hasClass('touch')) {
                     this.$el.addClass('is-animated-list');
                     this.checkIfOnScreen();
                 }
