@@ -1,6 +1,6 @@
 	{
-	  "_id": "c-05",
-	  "_parentId": "b-05",
+	    "_id": "c-05",
+	    "_parentId": "b-05",
 		"_type":"component",
 		"_component":"list",
 		"_classes":"",
@@ -10,10 +10,11 @@
 		"body":"Amet dolore ground round dolore qui swine brisket. Tri-tip consequat shankle dolore strip steak sirloin short loin alcatra minim culpa ad pastrami ex. Strip steak ea quis, drumstick rump do sed leberkas. Drumstick beef prosciutto magna rump ad sunt cillum fugiat kevin sint. Laborum pariatur chuck non ball tip, turducken meatloaf tail andouille aliqua brisket ex.",
 		"instruction":"Turducken meatloaf tail andouille aliqua brisket ex.",
 		"_animateList": true, // loop animate items into view - list is static by default
+		"_orderedList": true, // set items as ordered list - list is unordered by default
 		"_items": [
 			{
 				"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit loin alcatra minim culpa ad pastrami ex. Strip steak ea quis, drumstick rump do sed leberkas.",
-				"_imageSrc": "course/en/images/list-icon.png" // list items display as ordered list by default if img src isn't defined
+				"_imageSrc": "course/en/images/list-icon.png" // set img src to display list item icons
 			},
 			{
 				"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",

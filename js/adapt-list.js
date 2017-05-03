@@ -86,7 +86,7 @@ define(function(require) {
             if (listContainer.percentFromTop < triggerPercentage) {
                 if (!$listContainer.hasClass('inview')) {
                     $listContainer.addClass('inview');
-
+                    /* animate list items on loop */
                     var allListItems = this.$('.list-item');
                     var count = allListItems.length;
                     for (var i = 0; i < count; i++) {

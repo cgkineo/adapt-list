@@ -1,7 +1,7 @@
 <div class="list-inner component-inner" role="region" aria-label="{{_globals._components._list.ariaRegion}}">
     {{> component this}}
     <div class="list-widget component-widget">
-	    <div class="list-container">
+	    <div class="list-container {{#if _orderedList}}ordered-list{{/if}}">
 		    {{#each _items}}
 		    <div class="list-item {{#if _imageSrc}}has-image{{/if}}">
 		    	<div class="list-item-title" {{#if _imageSrc}}style="background-image:url({{_imageSrc}})"{{/if}}>{{{a11y_text title}}}</div>

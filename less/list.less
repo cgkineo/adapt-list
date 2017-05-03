@@ -1,23 +1,34 @@
 .list-component {
 	overflow: hidden;
 
+	.ordered-list {
+		.list-item {
+			counter-increment: step-counter;
+
+			&:before {
+				content: counter(step-counter);		
+			    font-size: @body-text-font-size;
+			    line-height: 1;
+			    font-weight: bold;
+			    border-radius: 0;
+			}
+		}
+	}
+
 	.list-item {
 		position: relative;
-		counter-increment: step-counter;
 
 		&:before {
-		    content: counter(step-counter);
+			content: "";
 		    position: absolute;
 		    left: 21px;
 			top: 50%;
 			transform: translateY(-50%);
 			-webkit-transform: translateY(-50%);
 		    padding: @item-padding;
-		    font-size: @body-text-font-size;
-		    line-height: 1;
 		    background-color: @item-color;
 		    color: @item-text-color;
-		    font-weight: bold;
+		    border-radius: 50%;
 		}
 
 		&.has-image {
