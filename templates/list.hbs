@@ -4,6 +4,7 @@
 	    <div class="list-container {{#if _orderedList}}ordered-list{{/if}}">
 		    {{#each _items}}
 		    <div class="list-item {{#if _imageSrc}}has-image{{/if}}">
+		    	{{#if alt}}<span tabindex="0" role="region" class="aria-label a11y-ignore-focus prevent-default">{{alt}}</span>{{/if}}
 		    	<div class="list-item-title" {{#if _imageSrc}}style="background-image:url({{_imageSrc}})"{{/if}}>{{{a11y_text title}}}</div>
 		    </div>
 		    {{/each}}
