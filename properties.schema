@@ -29,6 +29,61 @@
       "validators": [],
       "help": "This is the instruction text",
       "translatable": true
+    },
+    "_animateList": {
+      "type": "boolean",
+      "required": false,
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Animate the list items into view",
+      "translatable": false
+    },
+    "_orderedList": {
+      "type": "boolean",
+      "required": false,
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Set items as ordered list",
+      "translatable": false
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "List Items",
+      "help": "Add some list items",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "title": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Item title",
+            "inputType": "TextArea",
+            "validators": [],
+            "help": "Title of the list item",
+            "translatable": true
+          },
+          "_imageSrc": {
+            "type":"string",
+            "required": false,
+            "default": "",
+            "inputType": "Asset:image",
+            "validators": [],
+            "help": "Icon image for list item bullet"
+          },
+          "alt": {
+            "type": "string",
+            "default": "",
+            "title": "Alt text",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Alt text of image",
+            "translatable": true
+          }
+        }
+      }
     }
   }
 }
