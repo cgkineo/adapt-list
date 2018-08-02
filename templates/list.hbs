@@ -4,7 +4,7 @@
 	    <div role="list" class="list-container {{#if _orderedList}}ordered-list{{/if}}">
 		    {{#each _items}}
 		    <div role="listitem" class="list-item {{#if _imageSrc}}has-image{{/if}}">
-		    	<div class="list-item-title" {{#if _imageSrc}}style="background-image:url({{_imageSrc}})"{{/if}} {{#if alt}}arial-label="{{alt}}"{{/if}}>{{{compile title}}}<div class="list-item-body">{{{compile body}}}</div></div>
+		    	<div class="list-item-title" {{#if _imageSrc}}style="background-image:url({{_imageSrc}})"{{/if}} {{#if alt}}aria-label="{{alt}}"{{/if}}>{{{compile title}}}<div class="list-item-body">{{{compile body}}}</div></div>
 		    </div>
 		    {{/each}}
 	    </div>
