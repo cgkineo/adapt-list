@@ -1,11 +1,10 @@
-<div class="list-inner component-inner" role="region" aria-label="{{_globals._components._list.ariaRegion}}">
+<div class="list-inner component-inner">
     {{> component this}}
     <div class="list-widget component-widget">
-	    <div class="list-container {{#if _orderedList}}ordered-list{{/if}}">
+	    <div role="list" class="list-container {{#if _orderedList}}ordered-list{{/if}}">
 		    {{#each _items}}
-		    <div class="list-item {{#if _imageSrc}}has-image{{/if}}">
-		    	{{#if alt}}<span tabindex="0" role="region" class="aria-label a11y-ignore-focus prevent-default">{{alt}}</span>{{/if}}
-		    	<div class="list-item-title" {{#if _imageSrc}}style="background-image:url({{_imageSrc}})"{{/if}}>{{{a11y_text title}}}</div>
+		    <div role="listitem" class="list-item {{#if _imageSrc}}has-image{{/if}}">
+		    	<div class="list-item-title" {{#if _imageSrc}}style="background-image:url({{_imageSrc}})"{{/if}} {{#if alt}}aria-label="{{alt}}"{{/if}}>{{{compile title}}}<div class="list-item-body">{{{compile body}}}</div></div>
 		    </div>
 		    {{/each}}
 	    </div>
