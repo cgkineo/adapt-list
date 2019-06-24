@@ -33,6 +33,7 @@
     "_animateList": {
       "type": "boolean",
       "required": false,
+      "title": "Animate list",
       "inputType": "Checkbox",
       "validators": [],
       "help": "Animate the list items into view",
@@ -41,6 +42,7 @@
     "_orderedList": {
       "type": "boolean",
       "required": false,
+      "title": "Ordered list",
       "inputType": "Checkbox",
       "validators": [],
       "help": "Set items as ordered list",
@@ -57,30 +59,48 @@
         "properties": {
           "title": {
             "type": "string",
-            "required": true,
+            "required": false,
             "default": "",
             "title": "Item title",
-            "inputType": "TextArea",
+            "inputType": "Text",
             "validators": [],
             "help": "Title of the list item",
             "translatable": true
           },
-          "_imageSrc": {
-            "type":"string",
+          "body": {
+            "type": "string",
             "required": false,
             "default": "",
-            "inputType": "Asset:image",
+            "title": "Item body",
+            "inputType": "TextArea",
             "validators": [],
-            "help": "Icon image for list item bullet"
-          },
-          "alt": {
-            "type": "string",
-            "default": "",
-            "title": "Alt text",
-            "inputType": "Text",
-            "validators": [],
-            "help": "Alt text of image",
+            "help": "Content area of the list item",
             "translatable": true
+          },
+          "_graphic": {
+            "type": "object",
+            "title": "List item graphic",
+            "properties":{
+              "_src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Item icon image",
+                "inputType": "Asset:image",
+                "validators": [],
+                "help": "Icon image for the list item bullet"
+              },
+              "alt": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Alt text",
+                "inputType": "Text",
+                "validators": [],
+                "help": "Alternative text for this items image",
+                "translatable": true
+              }
+            }
           }
         }
       }
