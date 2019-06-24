@@ -1,12 +1,47 @@
-<div class="list-inner component-inner">
+<div class="component__inner list__inner">
+
   {{> component this}}
-  <div class="list-widget component-widget">
-    <div role="list" class="list-container {{#if _orderedList}}ordered-list{{/if}}">
+
+  <div class="component__widget list__widget">
+
+    <div class="list__container{{#if _animateList}} is-animated-list{{/if}}{{#if _orderedList}} is-ordered-list{{/if}}" role="list">
+
       {{#each _items}}
-      <div role="listitem" class="list-item {{#if _imageSrc}}has-image{{/if}}">
-        <div class="list-item-title" {{#if _imageSrc}}style="background-image:url({{_imageSrc}})"{{/if}} {{#if alt}}aria-label="{{alt}}"{{/if}}>{{{compile title}}}<div class="list-item-body">{{{compile body}}}</div></div>
+      <div class="list__item" role="listitem">
+
+        {{#if ../_orderedList}}
+        <div class="list__item-step-number"></div>
+        {{else if _graphic._src}}
+        <div class="list__item-image-container">
+          <img class="list__item-image" src="{{_graphic._src}}" {{#if _graphic.alt}}aria-label="{{_graphic.alt}}"{{else}}aria-hidden="true"{{/if}}>
+        </div>
+        {{/if}}
+
+        <div class="list__item-content">
+
+          {{#if title}}
+          <div class="list__item-title">
+            <div class="list__item-title-inner">
+              {{{compile title}}}
+            </div>
+          </div>
+          {{/if}}
+
+          {{#if body}}
+          <div class="list__item-body">
+            <div class="list__item-body-inner">
+              {{{compile body}}}
+            </div>
+          </div>
+          {{/if}}
+
+        </div>
+
       </div>
       {{/each}}
+
     </div>
+
   </div>
+
 </div>

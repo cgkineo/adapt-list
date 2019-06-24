@@ -13,7 +13,6 @@ define(function(require) {
       /* option to animate list items - excpet when accessibility is enabled or touch device */
       if (this.model.get('_animateList') === true) {
         if (!Adapt.config.get("_accessibility")._isActive && !$('html').hasClass('touch')) {
-          this.$el.addClass('is-animated-list');
           this.checkIfOnScreen();
         }
       }
@@ -38,11 +37,11 @@ define(function(require) {
      * determines which element should be used for inview logic - body, instruction or title - and returns the selector for that element
      */
     getInviewElementSelector: function() {
-      if(this.model.get('body')) return '.component-body';
+      if(this.model.get('body')) return '.component__body';
 
-      if(this.model.get('instruction')) return '.component-instruction';
+      if(this.model.get('instruction')) return '.component__instruction';
 
-      if(this.model.get('displayTitle')) return '.component-title';
+      if(this.model.get('displayTitle')) return '.component__title';
 
       return null;
     },
@@ -75,7 +74,7 @@ define(function(require) {
     },
 
     checkIfOnScreen: function() {
-      this.$('.list-container').on('onscreen', _.bind(this.calculate, this));
+      this.$('.list__container').on('onscreen', _.bind(this.calculate, this));
     },
 
 
@@ -84,15 +83,15 @@ define(function(require) {
       var triggerPercentage = 70;
 
       if (listContainer.percentFromTop < triggerPercentage) {
-        if (!$listContainer.hasClass('inview')) {
-          $listContainer.addClass('inview');
+        if (!$listContainer.hasClass('is-inview')) {
+          $listContainer.addClass('is-inview');
           /* animate list items on loop */
-          var allListItems = this.$('.list-item');
+          var allListItems = this.$('.list__item');
           var count = allListItems.length;
           for (var i = 0; i < count; i++) {
             (function(i){
               setTimeout(function(){
-                this.$(allListItems[i]).addClass('animate');
+                this.$(allListItems[i]).addClass('is-animating');
               }, 200 * i);
             }(i));
           }
