@@ -1,4 +1,4 @@
-# adapt-contrib-text
+# adapt-list
 
 **List** is a *presentation component* which displays text in a list. Text can be in an ordered, or unordered, list with or without an image.
 
@@ -12,7 +12,7 @@
 
 **\_layout** (string): This defines the horizontal position of the component in the block. Acceptable values are `full`, `left` or `right`.
 
-**\_items** (string): Multiple items may be created. Each item represents one grid item for this component and contains values for **title**, **body**, **\_imageSrc_** and **alt**.
+**\_items** (string): Multiple items may be created. Each item represents one list item for this component and contains values for **title**, **body**, **\_imageSrc_** and **alt**.
 
 >**title** (string): This is the title text for the list item.
 
