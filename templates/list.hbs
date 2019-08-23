@@ -11,9 +11,9 @@
 
         {{#if ../_orderedList}}
         <div class="list__item-step-number"></div>
-        {{else if _graphic._src}}
+        {{else if _imageSrc}}
         <div class="list__item-image-container">
-          <img class="list__item-image" src="{{_graphic._src}}" {{#if _graphic.alt}}aria-label="{{_graphic.alt}}"{{else}}aria-hidden="true"{{/if}}>
+          <img class="list__item-image" src="{{_imageSrc}}" {{#if alt}}aria-label="{{alt}}"{{else}}aria-hidden="true"{{/if}}>
         </div>
         {{/if}}
 

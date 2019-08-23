@@ -77,30 +77,24 @@
             "help": "Content area of the list item",
             "translatable": true
           },
-          "_graphic": {
-            "type": "object",
-            "title": "List item graphic",
-            "properties":{
-              "_src": {
-                "type": "string",
-                "required": false,
-                "default": "",
-                "title": "Item icon image",
-                "inputType": "Asset:image",
-                "validators": [],
-                "help": "Icon image for the list item bullet"
-              },
-              "alt": {
-                "type": "string",
-                "required": false,
-                "default": "",
-                "title": "Alt text",
-                "inputType": "Text",
-                "validators": [],
-                "help": "Alternative text for this items image",
-                "translatable": true
-              }
-            }
+          "_imageSrc": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Item image",
+            "inputType": "Asset:image",
+            "validators": [],
+            "help": "Image for the list item bullet"
+          },
+          "alt": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Alt text",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Alternative text for this items image",
+            "translatable": true
           }
         }
       }
