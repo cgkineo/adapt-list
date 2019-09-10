@@ -1,22 +1,32 @@
 .list {
-  @media (min-width: @device-width-medium) {
-    &__item {
+  &__item {
+    margin-bottom: @item-margin * 2;
+
+    @media (min-width: @device-width-medium) {
       display: flex;
       flex-wrap: nowrap;
-    }
-
-    &__item-content {
-      width: 90%;
     }
   }
 
   &__item-image-container {
     width: 25%;
     margin: 0 auto;
+    padding-right: @item-margin;
 
     @media (min-width: @device-width-medium) {
       width: 10%;
     }
+  }
+
+  &__item-content {
+    @media (min-width: @device-width-medium) {
+      width: 90%;
+    }
+  }
+
+  &__item-title {
+    margin-bottom: @item-title-margin;
+    .item-title;
   }
 
   // --------------------------------------------------
@@ -26,8 +36,63 @@
     counter-increment: step-counter;
   }
 
+  &__item-step-number {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 auto;
+
+    @media (min-width: @device-width-medium) {
+      width: 10%;
+    }
+  }
+
+  &__item-step-number:before {
+    height: 2em;
+    width: 2em;
+    padding: @item-padding / 2;
+    .item-title;
+    line-height: 1;
+    text-align: center;
+    background-color: @item-color;
+    color: @item-color-inverted;
+    border-radius: 50%;
+  }
+
   &__container.is-ordered-list .list__item-step-number:before {
     content: counter(step-counter);
   }
+
+  &__container.is-ordered-list .list__item-title {
+    margin-top: @item-margin;
+  }
+  // --------------------------------------------------
+
+  // --------------------------------------------------
+  // Animated list
+  // --------------------------------------------------
+  html:not(.touch) &.is-animated-list {
+    overflow: hidden;
+
+    .list__container .list__item {
+      position: relative;
+      right: -100%;
+      opacity: 0;
+      .transition(all .8s ease-in-out);
+    }
+
+    .list__container .list__item.is-animating {
+      right: 0;
+      opacity: 1;
+    }
+  }
+  // --------------------------------------------------
+
+  // --------------------------------------------------
+  // Vertically align image / number with item
+  // --------------------------------------------------
+  // &__container .list__item {
+  //   align-items: center;
+  // }
   // --------------------------------------------------
 }
