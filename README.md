@@ -27,9 +27,9 @@
 No known limitations.
 
 ----------------------------
-**Version number:**  3.0.0
-**Framework versions:** 5+
-**Author / maintainer:** Kineo
-**Accessibility support:** WAI AA
-**RTL support:** Yes
-**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge 12, IE11, IE Mobile 11, Safari iOS 9+10, Safari OS X 9+10, Opera
+**Version number:**  3.0.0  
+**Framework versions:** 5+  
+**Author / maintainer:** Kineo  
+**Accessibility support:** WAI AA  
+**RTL support:** Yes  
+**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge 12, IE11, IE Mobile 11, Safari iOS 9+10, Safari OS X 9+10, Opera  
