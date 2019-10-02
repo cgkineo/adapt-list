@@ -1,7 +1,5 @@
 .list {
   &__item {
-    margin-bottom: @item-margin * 2;
-
     @media (min-width: @device-width-medium) {
       display: flex;
       flex-wrap: nowrap;
@@ -11,7 +9,6 @@
   &__item-image-container {
     width: 25%;
     margin: 0 auto;
-    padding-right: @item-margin;
 
     @media (min-width: @device-width-medium) {
       width: 10%;
@@ -24,6 +21,36 @@
     }
   }
 
+  // --------------------------------------------------
+  // Ordered list
+  // --------------------------------------------------
+  &__container.is-ordered-list .list__item {
+    counter-increment: step-counter;
+  }
+
+  &__container.is-ordered-list .list__item-step-number:before {
+    content: counter(step-counter);
+  }
+  // --------------------------------------------------
+}
+
+// --------------------------------------------------
+// --------------------------------------------------
+// THEME
+// --------------------------------------------------
+// --------------------------------------------------
+
+.list {
+  &__item {
+    margin-bottom: @item-margin * 2;
+  }
+
+  @media (min-width: @device-width-medium) {
+    &__item-image-container {
+      padding-right: @item-margin;
+    }
+  }
+
   &__item-title {
     margin-bottom: @item-title-margin;
     .item-title;
@@ -32,10 +59,6 @@
   // --------------------------------------------------
   // Ordered list
   // --------------------------------------------------
-  &__container.is-ordered-list .list__item {
-    counter-increment: step-counter;
-  }
-
   &__item-step-number {
     display: flex;
     align-items: flex-start;
@@ -52,15 +75,10 @@
     width: 2rem;
     padding: @item-padding / 2;
     .item-title;
-    line-height: 1;
     text-align: center;
     background-color: @item-color;
     color: @item-color-inverted;
     border-radius: 50%;
-  }
-
-  &__container.is-ordered-list .list__item-step-number:before {
-    content: counter(step-counter);
   }
 
   &__container.is-ordered-list .list__item-title {
