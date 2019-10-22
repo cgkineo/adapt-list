@@ -32,4 +32,4 @@ No known limitations.
 **Author / maintainer:** Kineo  
 **Accessibility support:** WAI AA  
 **RTL support:** Yes  
-**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge 12, IE11, IE Mobile 11, Safari iOS 9+10, Safari OS X 9+10, Opera  
+**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE11, Safari 12+13 for macOS/iOS/iPadOS, Opera  
