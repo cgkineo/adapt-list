@@ -8,7 +8,7 @@
 
 **\_component** (string): This value must be: `text`.
 
-**\_classes** (string): CSS class name to be applied to **List**’s containing `div`. The class must be predefined in one of the Less files. Separate multiple classes with a space.
+**\_classes** (string): CSS class name to be applied to **List**’s containing `div`. The class must be predefined in one of the Less files. Separate multiple classes with a space. Supported classes are `"align-items-vert-center"` which aligns either the step number or image centrally, on the vertical axis, with the content.
 
 **\_layout** (string): This defines the horizontal position of the component in the block. Acceptable values are `full`, `left` or `right`.
 
@@ -27,7 +27,7 @@
 No known limitations.
 
 ----------------------------
-**Version number:**  3.0.0  
+**Version number:**  3.0.1  
 **Framework versions:** 5+  
 **Author / maintainer:** Kineo  
 **Accessibility support:** WAI AA  

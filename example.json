@@ -3,6 +3,7 @@
         "_parentId": "b-05",
         "_type": "component",
         "_component": "list",
+        "_comment._classes": "Supported classes = 'align-items-vert-center'. Aligns either the step number or image centrally, on the vertical axis, with the content.",
         "_classes": "",
         "_layout": "full",
         "title": "List component",
