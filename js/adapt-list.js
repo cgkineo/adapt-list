@@ -13,7 +13,7 @@ define([
     postRender: function() {
       /* option to animate list items - except on touch devices */
       if (this.model.get('_animateList') && !$('html').hasClass('touch')) {
-          this.$el.addClass('is-animated-list');
+        this.$el.addClass('is-animated-list');
         this.$('.list__container').on('onscreen.animate', this.checkIfOnScreen.bind(this));
       }
 
@@ -48,9 +48,9 @@ define([
     animateListItems: function() {
       var $allListItems = this.$('.list__item');
       $allListItems.each(function(index, listItem) {
-          setTimeout(function() {
-            $(listItem).addClass('is-animating');
-          }, 200 * index);
+        setTimeout(function() {
+          $(listItem).addClass('is-animating');
+        }, 200 * index);
       });
     },
 
