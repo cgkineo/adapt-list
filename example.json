@@ -8,8 +8,8 @@
         "_layout": "full",
         "title": "List component",
         "displayTitle": "List component",
-        "body": "Amet dolore ground round dolore qui swine brisket. Tri-tip consequat shankle dolore strip steak sirloin short loin alcatra minim culpa ad pastrami ex. Strip steak ea quis, drumstick rump do sed leberkas. Drumstick beef prosciutto magna rump ad sunt cillum fugiat kevin sint. Laborum pariatur chuck non ball tip, turducken meatloaf tail andouille aliqua brisket ex.",
-        "instruction": "Turducken meatloaf tail andouille aliqua brisket ex.",
+        "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<br/><br/>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "instruction": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
         "_comment._animateList": "loop animate items into view - list is static by default",
         "_animateList": true,
         "_comment._orderedList": "set items as ordered list - list is unordered by default",
@@ -17,31 +17,31 @@
         "_items": [
             {
                 "title": "Lorem ipsum dolor sit amet",
-                "body": "Consectetur adipisicing elit loin alcatra minim culpa ad pastrami ex. Strip steak ea quis, drumstick rump do sed leberkas.",
+                "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
                 "_imageSrc": "course/en/images/example.jpg",
                 "alt": "Placeholder graphic"
             },
             {
                 "title": "Lorem ipsum dolor sit amet",
-                "body": "Consectetur adipisicing elit loin alcatra minim culpa ad pastrami ex. Strip steak ea quis, drumstick rump do sed leberkas.",
+                "body": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.",
                 "_imageSrc": "course/en/images/example.jpg",
                 "alt": ""
             },
             {
                 "title": "Lorem ipsum dolor sit amet",
-                "body": "Consectetur adipisicing elit loin alcatra minim culpa ad pastrami ex. Strip steak ea quis, drumstick rump do sed leberkas.",
+                "body": "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
                 "_imageSrc": "course/en/images/example.jpg",
                 "alt": ""
             },
             {
                 "title": "Lorem ipsum dolor sit amet",
-                "body": "Consectetur adipisicing elit loin alcatra minim culpa ad pastrami ex. Strip steak ea quis, drumstick rump do sed leberkas.",
+                "body": "Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero.",
                 "_imageSrc": "course/en/images/example.jpg",
                 "alt": ""
             },
             {
                 "title": "Lorem ipsum dolor sit amet",
-                "body": "Consectetur adipisicing elit loin alcatra minim culpa ad pastrami ex. Strip steak ea quis, drumstick rump do sed leberkas.",
+                "body": "Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.",
                 "_imageSrc": "course/en/images/example.jpg",
                 "alt": ""
             }
