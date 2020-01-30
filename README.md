@@ -2,6 +2,8 @@
 
 **List** is a *presentation component* which displays text in a list. Text can be in an ordered, or unordered, list with or without an image.
 
+<img src="demo.gif" alt="the list component in action" align="right">
+
 ### Attributes
 
 [**core model attributes**](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes): These are inherited by every Adapt component. [Read more](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes).
@@ -12,13 +14,17 @@
 
 **\_layout** (string): This defines the horizontal position of the component in the block. Acceptable values are `full`, `left` or `right`.
 
-**\_items** (string): Multiple items may be created. Each item represents one list item for this component and contains values for **title**, **body**, **\_imageSrc_** and **alt**.
+**\_animateList** (boolean): If set to `true`, the list of items will animate when scrolled into view. The default value is `false`.
+
+**\_orderedList** (boolean): If set to `true`, each item in the list will numbered. The default value is `false`.
+
+**\_items** (string): Multiple items may be created. Each item represents one list item for this component and contains values for **title**, **body**, **\_imageSrc** and **alt**.
 
 >**title** (string): This is the title text for the list item.
 
 >**body** (string): This is the main body text for the list item.
 
->**\_imageSrc_** (string):  File name (including path) of the image. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*).
+>**\_imageSrc** (string):  File name (including path) of the image. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*). Only supported when **\_orderedList** is set to `false`.
 
 >**alt** (string): This text becomes the image’s `alt` attribute.
 
