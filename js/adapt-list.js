@@ -46,8 +46,7 @@ define([
      * animates the list items in one-by-one
      */
     animateListItems: function() {
-      var $allListItems = this.$('.list__item');
-      $allListItems.each(function(index, listItem) {
+      this.$('.list__item').each(function(index, listItem) {
         setTimeout(function() {
           $(listItem).addClass('is-animating');
         }, 200 * index);
