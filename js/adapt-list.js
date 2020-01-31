@@ -11,15 +11,14 @@ define([
     },
 
     postRender: function() {
-      /* option to animate list items - except on touch devices */
-      if (this.model.get('_animateList')) {
-        this.$el.addClass('is-animated-list');
-        this.$('.list__container').on('onscreen.animate', this.checkIfOnScreen.bind(this));
-      }
-
       this.setReadyStatus();
 
       this.setupInviewCompletion('.component__widget');
+
+      if (!this.model.get('_animateList')) return;
+
+      this.$el.addClass('is-animated-list');
+      this.$('.list__container').on('onscreen.animate', this.checkIfOnScreen.bind(this));
     },
 
     checkIfResetOnRevisit: function() {
