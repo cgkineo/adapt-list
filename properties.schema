@@ -39,6 +39,16 @@
       "help": "Animate the list items into view",
       "translatable": false
     },
+    "_percentInviewVertical": {
+      "type": "number",
+      "required": false,
+      "default": 70,
+      "isSetting": true,
+      "title": "Percent in view",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "Controls what percentage of the list items height needs to be in the viewport in order for the items to animate"
+    },
     "_orderedList": {
       "type": "boolean",
       "required": false,
