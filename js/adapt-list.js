@@ -33,8 +33,13 @@ define([
     /**
      * Kicks off the list item animation once the list container is at least 70% on screen
      */
-    checkIfOnScreen: function(event, measurements) {
-      if (measurements.percentFromTop >= 70) return;
+    checkIfOnScreen: function (event, measurements) {
+      // if % inview isn't set use default 70%
+      var percentage = (this.model.get('_percentInviewVertical'))
+        ? this.model.get('_percentInviewVertical')
+        : 70;
+
+      if (measurements.percentFromTop >= percentage) return;
 
       $(event.currentTarget).addClass('is-inview').off('onscreen.animate');
 
