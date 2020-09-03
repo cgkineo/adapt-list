@@ -12,7 +12,6 @@
     }
   }
 
-  // --------------------------------------------------
   // Unordered list
   // --------------------------------------------------
   &__item-image-container {
@@ -22,16 +21,14 @@
       width: 15%;
     }
   }
-  // --------------------------------------------------
 
-  // --------------------------------------------------
   // Ordered list
   // --------------------------------------------------
-  &__container.is-ordered-list .list__item {
+  &__container.is-ordered-list &__item {
     counter-increment: step-counter;
   }
 
-  &__container.is-ordered-list .list__item-bullet:before {
+  &__container.is-ordered-list &__item-bullet:before {
     content: counter(step-counter);
   }
 
@@ -44,13 +41,10 @@
       width: 15%;
     }
   }
-  // --------------------------------------------------
 }
 
 // --------------------------------------------------
-// --------------------------------------------------
 // THEME
-// --------------------------------------------------
 // --------------------------------------------------
 .list {
   &__item:not(:last-child) {
@@ -62,7 +56,6 @@
     .item-title;
   }
 
-  // --------------------------------------------------
   // Unordered list
   // --------------------------------------------------
   &__item-image-container {
@@ -73,9 +66,7 @@
       padding-right: @item-margin;
     }
   }
-  // --------------------------------------------------
 
-  // --------------------------------------------------
   // Ordered list
   // --------------------------------------------------
   &__item-bullet {
@@ -98,35 +89,28 @@
     color: @item-color-inverted;
     border-radius: 50%;
   }
-  // --------------------------------------------------
 
-  // --------------------------------------------------
   // Animated list
   // --------------------------------------------------
-  &.is-animated-list {
-    .list__widget {
-      overflow: hidden;
-    }
-
-    .list__container .list__item {
-      position: relative;
-      right: -100%;
-      opacity: 0;
-      .transition(all .8s ease-in-out);
-    }
-
-    .list__container .list__item.is-animating {
-      right: 0;
-      opacity: 1;
-    }
+  &.is-animated-list &__widget {
+    overflow: hidden;
   }
-  // --------------------------------------------------
 
-  // --------------------------------------------------
+  &.is-animated-list &__item {
+    position: relative;
+    right: -100%;
+    opacity: 0;
+    .transition(all .8s ease-in-out);
+  }
+
+  &.is-animated-list &__item.is-animating {
+    right: 0;
+    opacity: 1;
+  }
+
   // Vertically align image / number with item
   // --------------------------------------------------
-  .list.align-items-vert-center &__item {
+  &.align-items-vert-center &__item {
     align-items: center;
   }
-  // --------------------------------------------------
 }
