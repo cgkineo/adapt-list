@@ -9,13 +9,13 @@
       {{#each _items}}
       <div class="list__item" role="listitem">
 
-        {{#if ../_orderedList}}
-        <div class="list__item-step-number"></div>
-        {{else if _imageSrc}}
+        {{#unless _imageSrc}}
+        <div class="list__item-bullet"></div>
+        {{else}}
         <div class="list__item-image-container">
           <img class="list__item-image" src="{{_imageSrc}}" {{#if alt}}aria-label="{{alt}}"{{else}}aria-hidden="true"{{/if}}>
         </div>
-        {{/if}}
+        {{/unless}}
 
         <div class="list__item-content">
 
