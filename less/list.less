@@ -1,28 +1,23 @@
 .list {
   &__item {
-    @media (min-width: @device-width-medium) {
-      display: flex;
-      flex-wrap: nowrap;
-    }
+    display: flex;
+    flex-wrap: nowrap;
   }
 
   &__item-content {
-    @media (min-width: @device-width-medium) {
-      width: 85%;
-    }
+    width: 80%;
   }
 
-  // Unordered list
+  // List with image / bullet (ordered / unordered)
   // --------------------------------------------------
-  &__item-image-container {
-    width: 25%;
-
-    @media (min-width: @device-width-medium) {
-      width: 15%;
-    }
+  &__item-image-container,
+  &__item-bullet {
+    display: flex;
+    justify-content: center;
+    width: 20%;
   }
 
-  // Ordered list
+  // Ordered list set up
   // --------------------------------------------------
   &__container.is-ordered-list &__item {
     counter-increment: step-counter;
@@ -30,16 +25,6 @@
 
   &__container.is-ordered-list &__item-bullet:before {
     content: counter(step-counter);
-  }
-
-  &__item-bullet {
-    display: flex;
-
-    @media (min-width: @device-width-medium) {
-      align-items: flex-start;
-      justify-content: center;
-      width: 15%;
-    }
   }
 }
 
@@ -52,37 +37,27 @@
   }
 
   &__item-title {
-    margin-bottom: @item-title-margin;
     .item-title;
   }
 
-  // Unordered list
-  // --------------------------------------------------
-  &__item-image-container {
-    margin-bottom: @item-margin;
-
-    @media (min-width: @device-width-medium) {
-      margin-bottom: 0;
-      padding-right: @item-margin;
-    }
+  &__item-title.has-margin {
+    margin-bottom: @item-title-margin;
   }
 
-  // Ordered list
+  // List with image / bullet (ordered / unordered)
   // --------------------------------------------------
+  &__item-image-container,
   &__item-bullet {
-    margin-bottom: @item-margin;
-
-    @media (min-width: @device-width-medium) {
-      margin-bottom: 0;
-      padding-right: @item-margin;
-    }
+    padding-right: @item-padding;
   }
 
+  // Ordered / unordered list bullet
+  // --------------------------------------------------
   &__item-bullet:before {
     content: "";
-    height: 3rem;
-    width: 3rem;
-    padding: 0.75rem;
+    height: @icon-size * 2;
+    width: @icon-size * 2;
+    padding: @icon-size / 2;
     .item-title;
     text-align: center;
     background-color: @item-color;

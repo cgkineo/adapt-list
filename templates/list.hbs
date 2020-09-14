@@ -20,7 +20,7 @@
         <div class="list__item-content">
 
           {{#if title}}
-          <div class="list__item-title">
+          <div class="list__item-title{{#if body}} has-margin{{/if}}">
             <div class="list__item-title-inner">
               {{{compile title}}}
             </div>
