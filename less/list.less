@@ -4,17 +4,21 @@
     flex-wrap: nowrap;
   }
 
-  &__item-content {
-    width: 80%;
-  }
-
   // List with image / bullet (ordered / unordered)
   // --------------------------------------------------
   &__item-image-container,
   &__item-bullet {
     display: flex;
+  }
+
+  &__item-image-container {
+    align-items: flex-start;
     justify-content: center;
     width: 20%;
+  }
+
+  &__item-image-container + &__item-content {
+    width: 80%;
   }
 
   // Ordered list set up
@@ -46,8 +50,17 @@
 
   // List with image / bullet (ordered / unordered)
   // --------------------------------------------------
-  &__item-image-container,
+  &__item-image-container {
+    padding-right: @item-padding;
+
+    .dir-rtl & {
+      padding-right: inherit;
+      padding-left: @item-padding;
+    }
+  }
+
   &__item-bullet {
+    padding-left: @item-padding;
     padding-right: @item-padding;
   }
 
