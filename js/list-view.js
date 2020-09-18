@@ -1,7 +1,6 @@
 define([
-  'core/js/adapt',
   'core/js/views/componentView'
-], function (Adapt, ComponentView) {
+], function (ComponentView) {
 
   var ListView = ComponentView.extend({
 
