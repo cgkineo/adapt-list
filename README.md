@@ -16,7 +16,7 @@
 
 **\_animateList** (boolean): If set to `true`, the list of items will animate when scrolled into view. The default value is `false`.
 
-**\_percentInviewVertical** (number): Controls what percentage of the list items height needs to be in the viewport in order for the items to animate. Default value is 70% inview from top of screen. You only need to set this property if you want to override the default value.
+**\_percentInviewVertical** (number): Controls what percentage of the list items height needs to be in the viewport in order for the items to animate. Default value is to animate when 70% 'in view'. You only need to set this property if you want to override the default value.
 
 **\_orderedList** (boolean): If set to `true`, each item in the list will numbered. The default value is `false`.
 
@@ -35,7 +35,7 @@
 No known limitations.
 
 ----------------------------
-**Version number:**  3.1.0  
+**Version number:**  3.2.0  
 **Framework versions:** 5+  
 **Author / maintainer:** Kineo  
 **Accessibility support:** WAI AA  
