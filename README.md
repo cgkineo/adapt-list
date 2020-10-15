@@ -20,6 +20,8 @@
 
 **\_orderedList** (boolean): If set to `true`, each item in the list will numbered. The default value is `false`.
 
+**\_columns** (number): Defines the number of columns wide the **\_items** are displayed in. If the value of **\_numberOfColumns** is `2`, each **\_items** will be 50% wide. Similarly, if the value of **\_numberOfColumns** is `3`, each **\_items** will be 33.3% wide. In tablet view, the width of each **\_items** is 50%. In mobile view, the width of each **\_items** is 100%.
+
 **\_items** (string): Multiple items may be created. Each item represents one list item for this component and contains values for **title**, **body**, **\_imageSrc** and **alt**.
 
 >**title** (string): This is the title text for the list item.

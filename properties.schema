@@ -58,6 +58,15 @@
       "help": "Set items as ordered list",
       "translatable": false
     },
+    "_columns": {
+      "type": "number",
+      "required": false,
+      "default": 0,
+      "title": "Columns",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "Set the number of columns. If value is '0', component uses the default layout."
+    },
     "_items": {
       "type": "array",
       "required": true,

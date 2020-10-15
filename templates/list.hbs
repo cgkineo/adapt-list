@@ -4,39 +4,41 @@
 
   <div class="component__widget list__widget">
 
-    <div class="list__container{{#if _orderedList}} is-ordered-list{{/if}}" role="list">
+    <div class="list__container{{#if _orderedList}} is-ordered-list{{/if}}{{#if _columns}} has-columns{{/if}}" role="list">
 
       {{#each _items}}
       <div class="list__item" role="listitem">
+        <div class="list__item-inner">
 
-        {{#unless _imageSrc}}
-        <div class="list__item-bullet"></div>
-        {{else}}
-        <div class="list__item-image-container">
-          <img class="list__item-image" src="{{_imageSrc}}" {{#if alt}}aria-label="{{alt}}"{{else}}aria-hidden="true"{{/if}}>
-        </div>
-        {{/unless}}
-
-        <div class="list__item-content">
-
-          {{#if title}}
-          <div class="list__item-title{{#if body}} has-margin{{/if}}">
-            <div class="list__item-title-inner">
-              {{{compile title}}}
-            </div>
+          {{#unless _imageSrc}}
+          <div class="list__item-bullet"></div>
+          {{else}}
+          <div class="list__item-image-container">
+            <img class="list__item-image" src="{{_imageSrc}}" {{#if alt}}aria-label="{{alt}}" {{else}}aria-hidden="true" {{/if}}>
           </div>
-          {{/if}}
-
-          {{#if body}}
-          <div class="list__item-body">
-            <div class="list__item-body-inner">
-              {{{compile body}}}
+          {{/unless}}
+          
+          <div class="list__item-content">
+          
+            {{#if title}}
+            <div class="list__item-title{{#if body}} has-margin{{/if}}">
+              <div class="list__item-title-inner">
+                {{{compile title}}}
+              </div>
             </div>
+            {{/if}}
+          
+            {{#if body}}
+            <div class="list__item-body">
+              <div class="list__item-body-inner">
+                {{{compile body}}}
+              </div>
+            </div>
+            {{/if}}
+          
           </div>
-          {{/if}}
 
         </div>
-
       </div>
       {{/each}}
 
