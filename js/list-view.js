@@ -30,7 +30,7 @@ define([
     setUpColumns: function () {
       var columns = this.model.get('_columns');
 
-      if (!columns) return;
+      if (columns < 2) return;
 
       var isLarge = Adapt.device.screenSize === 'large';
       this.$('.list__item').css('width', isLarge ? (100 / columns) + '%' : '');
