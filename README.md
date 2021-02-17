@@ -30,7 +30,7 @@
 
 >**\_imageSrc** (string):  File name (including path) of the image. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*). Only supported when **\_orderedList** is set to `false`.
 
->**alt** (string): This text becomes the image’s `alt` attribute.
+>**alt** (string): The alternative text for the item image. Assign [alt text](https://github.com/adaptlearning/adapt_framework/wiki/Providing-good-alt-text) to images that convey course content only.
 
 ## Limitations
 
