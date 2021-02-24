@@ -1,5 +1,5 @@
 .list {
-  &__item {
+  &__item-inner {
     display: flex;
     flex-wrap: nowrap;
   }
@@ -94,6 +94,38 @@
       right: 0;
       opacity: 1;
     }
+  }
+
+  // Column layout
+  // --------------------------------------------------
+  &__container.has-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  &__container.has-columns &__item {
+    width: 100%;
+
+    @media (min-width: @device-width-small) {
+      width: 50%;
+    }
+  }
+
+  &__container.has-columns &__item-inner {
+    flex-direction: column;
+    margin: @item-margin;
+  }
+
+  &__container.has-columns &__item-image-container {
+    width: 100%;
+    padding: inherit;
+    margin-bottom: @item-margin;
+  }
+
+  &__container.has-columns &__item-content {
+    width: 100%;
   }
 
   // Vertically align image / number with item
