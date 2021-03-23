@@ -1,11 +1,14 @@
-define([
-  'core/js/models/componentModel'
-],function(ComponentModel) {
+import ItemsComponentModel from 'core/js/models/itemsComponentModel';
 
-  var ListModel = ComponentModel.extend({
+export default class ListModel extends ItemsComponentModel {
 
-  });
+  defaults() {
+    return ItemsComponentModel.resultExtend('defaults', {
+      _animateList: false,
+      _columns: 0,
+      _orderedList: false,
+      _percentInviewVertical: 70
+    });
+  }
 
-  return ListModel;
-
-});
+}

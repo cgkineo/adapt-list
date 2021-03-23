@@ -1,12 +1,8 @@
-define([
-  'core/js/adapt',
-  './list-model',
-  './list-view'
-], function(Adapt, ListModel, ListView) {
+import Adapt from 'core/js/adapt';
+import ListModel from './list-model';
+import ListView from './list-view';
 
-  return Adapt.register('list', {
-    model: ListModel,
-    view: ListView
-  });
-
+export default Adapt.register('list', {
+  model: ListModel,
+  view: ListView
 });
