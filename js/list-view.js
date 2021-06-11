@@ -13,7 +13,7 @@ class ListView extends ComponentView {
   }
 
   preRender() {
-    this.listenTo(this.model.getChildren(), { 'all': this.changed });
+    this.listenTo(this.model.getChildren(), { all: this.changed });
 
     super.preRender();
   }
@@ -41,7 +41,7 @@ class ListView extends ComponentView {
    * animates the list items in one-by-one
    */
   animateListItems() {
-    this.model.getChildren().each((listItem, index) => {
+    this.model.getChildren().forEach((listItem, index) => {
       setTimeout(listItem.toggleActive.bind(listItem), 200 * index);
     });
   }
