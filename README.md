@@ -38,7 +38,7 @@ No known limitations.
 
 ----------------------------
 **Version number:**  4  
-**Framework versions:** 5.12+  
+**Framework versions:** 5.14+  
 **Author / maintainer:** Kineo  
 **Accessibility support:** WAI AA  
 **RTL support:** Yes  
