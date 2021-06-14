@@ -12,12 +12,6 @@ class ListView extends ComponentView {
     return classes;
   }
 
-  preRender() {
-    this.listenTo(this.model.getChildren(), { all: this.changed });
-
-    super.preRender();
-  }
-
   postRender() {
     this.setReadyStatus();
     this.setupInviewCompletion('.component__widget');
