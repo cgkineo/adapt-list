@@ -30,14 +30,11 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
               <div className="list__item-inner">
                 {!_imageSrc ?
                   <div className="list__item-bullet"></div> :
-                  <div className="list__item-image-container">
-                    <img
-                      className="list__item-image"
-                      src={_imageSrc}
-                      aria-label={alt}
-                      aria-hidden={!alt}
-                    />
-                  </div>
+                  <templates.image
+                    _src={_imageSrc}
+                    alt={alt}
+                    classNamePrefixes={[ 'list__item' ]}
+                  />
                 }
                 <div className="list__item-content">
                   {title &&
