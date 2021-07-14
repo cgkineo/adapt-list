@@ -36,7 +36,7 @@ class ListView extends ComponentView {
    */
   animateListItems() {
     this.model.getChildren().forEach((listItem, index) => {
-      setTimeout(listItem.toggleActive.bind(listItem), 200 * index);
+      setTimeout(listItem.toggleActive.bind(listItem, true), 200 * index);
     });
   }
 
