@@ -17,7 +17,7 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
           ])}
           role="list"
         >
-          {_items.map(({ _isActive, _imageSrc, alt, title, body }, index) =>
+          {_items && _items.map(({ _isActive, _imageSrc, alt, title, body }, index) =>
             <div
               key={index}
               className={classes([
