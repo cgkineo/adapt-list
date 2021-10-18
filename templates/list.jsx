@@ -21,33 +21,33 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
             <div
               key={index}
               className={classes([
-                'list__item',
+                'list-item',
                 _isActive && 'is-animating'
               ])}
               role="listitem"
               style={(hasColumns && Adapt.device.screenSize === 'large' && { width: `${100 / _columns}%` }) || null}
             >
-              <div className="list__item-inner">
+              <div className="list-item__inner">
                 {!_imageSrc ?
-                  <div className="list__item-bullet"></div> :
+                  <div className="list-item__bullet"></div> :
                   <templates.image
                     _src={_imageSrc}
                     alt={alt}
-                    classNamePrefixes={[ 'list__item' ]}
+                    classNamePrefixes={[ 'list-item' ]}
                   />
                 }
-                <div className="list__item-content">
+                <div className="list-item__content">
                   {title &&
                     <div className={classes([
-                      'list__item-title',
+                      'list-item__title',
                       body && 'has-margin'
                     ])}>
-                      <div className="list__item-title-inner">{html(compile(title))}</div>
+                      <div className="list-item__title-inner">{html(compile(title))}</div>
                     </div>
                   }
                   {body &&
-                    <div className="list__item-body">
-                      <div className="list__item-body-inner">{html(compile(body))}</div>
+                    <div className="list-item__body">
+                      <div className="list-item__body-inner">{html(compile(body))}</div>
                     </div>
                   }
                 </div>

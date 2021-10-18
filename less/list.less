@@ -1,34 +1,36 @@
 .list {
-  &__item-inner {
+  // Ordered list set up
+  // --------------------------------------------------
+  &__container.is-ordered-list &-item {
+    counter-increment: step-counter;
+  }
+
+  &__container.is-ordered-list &-item__bullet:before {
+    content: counter(step-counter);
+  }
+}
+
+.list-item {
+  &__inner {
     display: flex;
     flex-wrap: nowrap;
   }
 
   // List with image / bullet (ordered / unordered)
   // --------------------------------------------------
-  &__item-image-container,
-  &__item-bullet {
+  &__image-container,
+  &__bullet {
     display: flex;
   }
 
-  &__item-image-container {
+  &__image-container {
     align-items: flex-start;
     justify-content: center;
     width: 20%;
   }
 
-  &__item-image-container + &__item-content {
+  &__image-container + &__content {
     width: 80%;
-  }
-
-  // Ordered list set up
-  // --------------------------------------------------
-  &__container.is-ordered-list &__item {
-    counter-increment: step-counter;
-  }
-
-  &__container.is-ordered-list &__item-bullet:before {
-    content: counter(step-counter);
   }
 }
 
@@ -36,55 +38,13 @@
 // THEME
 // --------------------------------------------------
 .list {
-  &__item:not(:last-child) {
-    margin-bottom: @item-margin * 2;
-  }
-
-  &__item-title {
-    .item-title;
-  }
-
-  &__item-title.has-margin {
-    margin-bottom: @item-title-margin;
-  }
-
-  // List with image / bullet (ordered / unordered)
-  // --------------------------------------------------
-  &__item-image-container {
-    padding-right: @item-padding;
-
-    .dir-rtl & {
-      padding-right: inherit;
-      padding-left: @item-padding;
-    }
-  }
-
-  &__item-bullet {
-    padding-left: @item-padding;
-    padding-right: @item-padding;
-  }
-
-  // Ordered / unordered list bullet
-  // --------------------------------------------------
-  &__item-bullet:before {
-    content: "";
-    height: @icon-size * 2;
-    width: @icon-size * 2;
-    padding: @icon-size / 2;
-    .item-title;
-    text-align: center;
-    background-color: @item-color;
-    color: @item-color-inverted;
-    border-radius: 50%;
-  }
-
-  // Animated list
+  // Animated list set up
   // --------------------------------------------------
   &.is-animated-list &__widget {
     overflow: hidden;
   }
 
-  &.is-animated-list &__item {
+  &.is-animated-list &-item {
     position: relative;
     right: -100%;
     opacity: 0;
@@ -105,7 +65,7 @@
     align-items: stretch;
   }
 
-  &__container.has-columns &__item {
+  &__container.has-columns &-item {
     width: 100%;
 
     @media (min-width: @device-width-small) {
@@ -113,24 +73,68 @@
     }
   }
 
-  &__container.has-columns &__item-inner {
+  &__container.has-columns &-item__inner {
     flex-direction: column;
     margin: @item-margin;
   }
 
-  &__container.has-columns &__item-image-container {
+  &__container.has-columns &-item__image-container {
     width: 100%;
     padding: inherit;
     margin-bottom: @item-margin;
   }
 
-  &__container.has-columns &__item-content {
+  &__container.has-columns &-item__content {
     width: 100%;
   }
 
   // Vertically align image / number with item
   // --------------------------------------------------
-  &.align-items-vert-center &__item-inner {
+  &.align-items-vert-center &-item__inner {
     align-items: center;
+  }
+}
+
+.list-item {
+  &:not(:last-child) {
+    margin-bottom: @item-margin * 2;
+  }
+
+  &__title {
+    .item-title;
+  }
+
+  &__title.has-margin {
+    margin-bottom: @item-title-margin;
+  }
+
+  // List with image / bullet (ordered / unordered)
+  // --------------------------------------------------
+  &__image-container {
+    padding-right: @item-padding;
+
+    .dir-rtl & {
+      padding-right: inherit;
+      padding-left: @item-padding;
+    }
+  }
+
+  &__bullet {
+    padding-left: @item-padding;
+    padding-right: @item-padding;
+  }
+
+  // Ordered / unordered list bullet
+  // --------------------------------------------------
+  &__bullet:before {
+    content: "";
+    height: @icon-size * 2;
+    width: @icon-size * 2;
+    padding: @icon-size / 2;
+    .item-title;
+    text-align: center;
+    background-color: @item-color;
+    color: @item-color-inverted;
+    border-radius: 50%;
   }
 }
