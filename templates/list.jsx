@@ -1,9 +1,14 @@
 import Adapt from 'core/js/adapt';
 import React from 'react';
+import a11y from 'core/js/a11y';
 import { templates, classes, html, compile } from 'core/js/reactHelpers';
 
 export default function List({ _columns, _orderedList, _items, ...props }) {
   const hasColumns = _columns > 1;
+  const {
+    _ariaLevel
+  } = props;
+  const itemAriaLevel = _.isNumber(_ariaLevel) ? _ariaLevel + 1 : _ariaLevel;
 
   return (
     <div className="component__inner list__inner">
@@ -38,10 +43,14 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
                 }
                 <div className="list-item__content">
                   {title &&
-                    <div className={classes([
-                      'list-item__title',
-                      body && 'has-margin'
-                    ])}>
+                    <div 
+                      className={classes([
+                        'list-item__title',
+                        body && 'has-margin'
+                      ])}
+                      role="heading"
+                      aria-level={a11y.ariaLevel('componentItem', itemAriaLevel)}
+                    >
                       <div className="list-item__title-inner">{html(compile(title))}</div>
                     </div>
                   }
