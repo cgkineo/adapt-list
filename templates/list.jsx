@@ -8,7 +8,7 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
   const {
     _ariaLevel
   } = props;
-  const itemAriaLevel = _.isNumber(_ariaLevel) && _ariaLevel !== 0 : _ariaLevel;
+  const itemAriaLevel = _.isNumber(_ariaLevel) && _ariaLevel !== 0 ? _ariaLevel + 1 : _ariaLevel;
   return (
     <div className="component__inner list__inner">
       <templates.header {...props} />
