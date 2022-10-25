@@ -22,7 +22,7 @@
 
 **\_columns** (number): Defines the number of columns wide the **\_items** are displayed in. If the value of **\_numberOfColumns** is `2`, each **\_items** will be 50% wide. Similarly, if the value of **\_numberOfColumns** is `3`, each **\_items** will be 33.3% wide. In tablet view, the width of each **\_items** is 50%. In mobile view, the width of each **\_items** is 100%.
 
-**\_items** (string): Multiple items may be created. Each item represents one list item for this component and contains values for **title**, **body**, **\_imageSrc** and **alt**.
+**\_items** (string): Multiple items may be created. Each item represents one list item for this component and contains values for **title**, **body**, **\_imageSrc**, **alt** and **_classes**.
 
 >**title** (string): This is the title text for the list item.
 
@@ -31,6 +31,8 @@
 >**\_imageSrc** (string):  File name (including path) of the image. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*). Only supported when **\_orderedList** is set to `false`.
 
 >**alt** (string): The alternative text for the item image. Assign [alt text](https://github.com/adaptlearning/adapt_framework/wiki/Providing-good-alt-text) to images that convey course content only.
+
+>**\_classes** (string): CSS class name to be applied to list item. The class must be predefined in one of the Less files. Separate multiple classes with a space.
 
 ## Limitations
 

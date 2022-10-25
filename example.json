@@ -19,31 +19,36 @@
                 "title": "Lorem ipsum dolor sit amet",
                 "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
                 "_imageSrc": "",
-                "alt": ""
+                "alt": "",
+                "_classes": ""
             },
             {
                 "title": "Lorem ipsum dolor sit amet",
                 "body": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.",
                 "_imageSrc": "",
-                "alt": ""
+                "alt": "",
+                "_classes": ""
             },
             {
                 "title": "Lorem ipsum dolor sit amet",
                 "body": "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
                 "_imageSrc": "",
-                "alt": ""
+                "alt": "",
+                "_classes": ""
             },
             {
                 "title": "Lorem ipsum dolor sit amet",
                 "body": "Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero.",
                 "_imageSrc": "",
-                "alt": ""
+                "alt": "",
+                "_classes": ""
             },
             {
                 "title": "Lorem ipsum dolor sit amet",
                 "body": "Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.",
                 "_imageSrc": "",
-                "alt": ""
+                "alt": "",
+                "_classes": ""
             }
         ],
         "_pageLevelProgress": {

@@ -21,12 +21,13 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
           ])}
           role="list"
         >
-          {_items.map(({ _isActive, _imageSrc, alt, title, body }, index) =>
+          {_items.map(({ _isActive, _classes, _imageSrc, alt, title, body }, index) =>
             <div
               key={index}
               className={classes([
                 'list-item',
-                _isActive && 'is-animating'
+                _isActive && 'is-animating',
+                _classes
               ])}
               role="listitem"
               style={(hasColumns && Adapt.device.screenSize === 'large' && { width: `${100 / _columns}%` }) || null}

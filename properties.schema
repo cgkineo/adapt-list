@@ -114,6 +114,15 @@
             "validators": [],
             "help": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
             "translatable": true
+          },
+          "_classes": {
+            "type": "string",
+            "default": "",
+            "isSetting": true,
+            "inputType": "Text",
+            "validators": [],
+            "title": "Classes",
+            "help": "Used to style or manipulate the look and feel of this list item. These are predefined in the theme or added in Project Settings > Custom CSS/Less code."
           }
         }
       }
