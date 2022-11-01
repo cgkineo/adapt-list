@@ -4,8 +4,8 @@ class ListView extends ComponentView {
 
   className() {
     let classes = super.className();
-
-    if (this.model.get('_animateList')) {
+    // don't animate when Visua11y 'no animations' is set
+    if (this.model.get('_animateList') && (!$('html').hasClass('a11y-no-animations'))) {
       classes += ' is-animated-list';
     }
 
@@ -16,7 +16,7 @@ class ListView extends ComponentView {
     this.setReadyStatus();
     this.setupInviewCompletion('.component__widget');
 
-    if (this.model.get('_animateList')) {
+    if (this.model.get('_animateList') && (!$('html').hasClass('a11y-no-animations'))) {
       this.$('.list__container').on('onscreen.animate', this.checkIfOnScreen.bind(this));
     }
   }
