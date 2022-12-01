@@ -26,11 +26,11 @@
   &__image-container {
     align-items: flex-start;
     justify-content: center;
-    width: 20%;
+    width: 96px;
   }
 
   &__image-container + &__content {
-    width: 80%;
+    width: calc(~'100% - 96px');
   }
 }
 
@@ -49,7 +49,7 @@
     right: -100%;
     opacity: 0;
     .transition(all .8s ease-in-out);
-    
+
     .dir-rtl & {
       right: inherit;
       left: -100%;
@@ -58,7 +58,7 @@
     &.is-animating {
       right: 0;
       opacity: 1;
-      
+
       .dir-rtl & {
         right: inherit;
         left: 0;
