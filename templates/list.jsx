@@ -27,6 +27,7 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
               className={classes([
                 'list-item',
                 _isActive && 'is-animating',
+                _imageSrc && 'has-image',
                 _classes
               ])}
               role="listitem"
@@ -43,7 +44,7 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
                 }
                 <div className="list-item__content">
                   {title &&
-                    <div 
+                    <div
                       className={classes([
                         'list-item__title',
                         body && 'has-margin'
