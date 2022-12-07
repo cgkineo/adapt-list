@@ -21,27 +21,27 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
           ])}
           role="list"
         >
-          {_items.map(({ _isActive, _classes, _imageSrc, alt, title, body }, index) =>
+          {_items.map(({ _isActive, title, body, _classes, _graphic }, index) =>
             <div
               key={index}
               className={classes([
                 'list-item',
                 _isActive && 'is-animating',
-                _imageSrc && 'has-image',
+                _graphic.src && 'has-image',
                 _classes
               ])}
               role="listitem"
               style={(hasColumns && Adapt.device.screenSize === 'large' && { width: `${100 / _columns}%` }) || null}
             >
               <div className="list-item__inner">
-                {!_imageSrc ?
-                  <div className="list-item__bullet"></div> :
-                  <templates.image
-                    _src={_imageSrc}
-                    alt={alt}
-                    classNamePrefixes={[ 'list-item' ]}
+                {!_graphic.src ?
+                  <div className="list-item__bullet" aria-hidden="true"></div> :
+                  <templates.image {..._graphic}
+                    classNamePrefixes={['component-item', 'list-item']}
+                    attributionClassNamePrefixes={['component', 'list']}
                   />
                 }
+
                 <div className="list-item__content">
                   {title &&
                     <div
@@ -52,15 +52,21 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
                       role="heading"
                       aria-level={a11y.ariaLevel('componentItem', itemAriaLevel)}
                     >
-                      <div className="list-item__title-inner">{html(compile(title))}</div>
+                      <div className="list-item__title-inner">
+                        {html(compile(title))}
+                      </div>
                     </div>
                   }
+
                   {body &&
                     <div className="list-item__body">
-                      <div className="list-item__body-inner">{html(compile(body))}</div>
+                      <div className="list-item__body-inner">
+                        {html(compile(body))}
+                      </div>
                     </div>
                   }
                 </div>
+
               </div>
             </div>
           )}
