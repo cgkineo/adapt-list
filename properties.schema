@@ -73,7 +73,7 @@
       "default": "start",
       "inputType": {"type":"Select", "options":["start","center","end"]},
       "title": "Item horizontal alignment",
-      "help": "Find more info out <a href='https://github.com/cgkineo/adapt-list/tree/issue/46#_verticalAlignment' target='_blank'>here</a>"
+      "help": "Controls the horizontal alignment of the list items. This setting will only take affect if the `_columns` property has a value above `0`. Refer to the plugins readme for further info."
     },
     "_bulletAlignment": {
       "type": "string",
@@ -81,7 +81,7 @@
       "default": "start",
       "inputType": {"type":"Select", "options":["start","center","end"]},
       "title": "Image or bullet alignment",
-      "help": "Find more info out <a href='https://github.com/cgkineo/adapt-list/blob/issue/46/README.md#_verticalAlignment' target='_blank'>here</a>"
+      "help": "Controls the vertical alignment of the list item image or bullet alongside the text content. If the `_columns` property has a value above `0` then this properties alignment switches from vertical to horizontal. Refer to the plugins readme for further info."
     },
     "_items": {
       "type": "array",
