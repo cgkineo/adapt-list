@@ -30,6 +30,24 @@
       "help": "This is the instruction text",
       "translatable": true
     },
+    "_columns": {
+      "type": "number",
+      "required": false,
+      "default": 0,
+      "title": "Columns",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "Set the number of columns. If value is '0', component uses the default layout."
+    },
+    "_orderedList": {
+      "type": "boolean",
+      "required": false,
+      "title": "Ordered list",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Set items as ordered list",
+      "translatable": false
+    },
     "_animateList": {
       "type": "boolean",
       "required": false,
@@ -49,23 +67,21 @@
       "validators": ["number"],
       "help": "Controls what percentage of the list items height needs to be in the viewport in order for the items to animate"
     },
-    "_orderedList": {
-      "type": "boolean",
+    "_itemHorizontalAlignment": {
+      "type": "string",
       "required": false,
-      "title": "Ordered list",
-      "inputType": "Checkbox",
-      "validators": [],
-      "help": "Set items as ordered list",
-      "translatable": false
+      "default": "start",
+      "inputType": {"type":"Select", "options":["start","center","end"]},
+      "title": "Item horizontal alignment",
+      "help": "Find more info out <a href='https://github.com/cgkineo/adapt-list/tree/issue/46#_verticalAlignment' target='_blank'>here</a>"
     },
-    "_columns": {
-      "type": "number",
+    "_bulletAlignment": {
+      "type": "string",
       "required": false,
-      "default": 0,
-      "title": "Columns",
-      "inputType": "Number",
-      "validators": ["number"],
-      "help": "Set the number of columns. If value is '0', component uses the default layout."
+      "default": "start",
+      "inputType": {"type":"Select", "options":["start","center","end"]},
+      "title": "Image or bullet alignment",
+      "help": "Find more info out <a href='https://github.com/cgkineo/adapt-list/blob/issue/46/README.md#_verticalAlignment' target='_blank'>here</a>"
     },
     "_items": {
       "type": "array",
@@ -96,25 +112,6 @@
             "help": "Content area of the list item",
             "translatable": true
           },
-          "_imageSrc": {
-            "type": "string",
-            "required": false,
-            "default": "",
-            "title": "Item image",
-            "inputType": "Asset:image",
-            "validators": [],
-            "help": "Image for the list item bullet"
-          },
-          "alt": {
-            "type": "string",
-            "required": false,
-            "default": "",
-            "title": "Alternative text",
-            "inputType": "Text",
-            "validators": [],
-            "help": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
-            "translatable": true
-          },
           "_classes": {
             "type": "string",
             "default": "",
@@ -123,6 +120,40 @@
             "validators": [],
             "title": "Classes",
             "help": "Used to style or manipulate the look and feel of this list item. These are predefined in the theme or added in Project Settings > Custom CSS/Less code."
+          },
+          "_graphic": {
+            "type": "object",
+            "required": true,
+            "title": "List Item Graphic",
+            "properties": {
+              "src": {
+                "type": "string",
+                "required": true,
+                "default": "",
+                "inputType": "Asset:image",
+                "validators": ["required"],
+                "help": "Image to be displayed in the list item."
+              },
+              "alt": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Alternative text",
+                "inputType": "Text",
+                "validators": [],
+                "help": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
+                "translatable": true
+              },
+              "attribution": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "inputType": "Text",
+                "validators": [],
+                "help": "Text to be displayed as an attribution for the list item image.",
+                "translatable": true
+              }
+            }
           }
         }
       }
