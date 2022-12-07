@@ -29,15 +29,11 @@ If set to `true`, the list of items will animate when scrolled into view. The de
 ### \_percentInviewVertical (number):
 Controls what percentage of the list items height needs to be in the viewport in order for the items to animate. Default value is to animate when 70% 'in view'. You only need to set this property if you want to override the default value.
 
-<a name="_itemHorizontalAlignment"></a>
-
 ### \_itemHorizontalAlignment (string):
 Controls the horizontal alignment of the list items. This setting will only take affect if the `_columns` property has a value above `0`. Values available utilise the CSS property [`justify-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content). The default value is `start`. It contains the following settings:
 * `start`: Aligns the list item with the natural page direction. In a left-to-right course this is left by default.
 * `center`: Aligns the list item to the center of the container.
 * `end`: Aligns the list item to the opposite side of the natural page direction. In a left-to-right course this is right by default.
-
-<a name="_bulletAlignment"></a>
 
 ### \_bulletAlignment (string):
 Controls the vertical alignment of the list item image or bullet alongside the text content. If the `_columns` property has a value above `0` then this properties alignment switches from vertical to horizontal. Values available utilise the CSS property [`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items). The default value is `start`. It contains the following settings:
