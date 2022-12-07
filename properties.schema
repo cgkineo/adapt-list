@@ -123,15 +123,15 @@
           },
           "_graphic": {
             "type": "object",
-            "required": true,
+            "required": false,
             "title": "List Item Graphic",
             "properties": {
               "src": {
                 "type": "string",
-                "required": true,
+                "required": false,
                 "default": "",
                 "inputType": "Asset:image",
-                "validators": ["required"],
+                "validators": [],
                 "help": "Image to be displayed in the list item."
               },
               "alt": {
