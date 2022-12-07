@@ -6,6 +6,7 @@ import { templates, classes, html, compile } from 'core/js/reactHelpers';
 export default function List({ _columns, _orderedList, _items, ...props }) {
   const hasColumns = _columns > 1;
   const {
+    _id,
     _ariaLevel
   } = props;
   const itemAriaLevel = _.isNumber(_ariaLevel) && _ariaLevel !== 0 ? _ariaLevel + 1 : _ariaLevel;
@@ -49,7 +50,7 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
                         body && 'has-margin'
                       ])}
                       role="heading"
-                      aria-level={a11y.ariaLevel('componentItem', itemAriaLevel)}
+                      aria-level={a11y.ariaLevel({ id: _id, level: 'componentItem', override: _ariaLevel ?? itemAriaLevel })}
                     >
                       <div className="list-item__title-inner">{html(compile(title))}</div>
                     </div>
