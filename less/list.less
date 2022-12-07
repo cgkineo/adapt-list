@@ -9,17 +9,17 @@
     content: counter(step-counter);
   }
 
-  // Vertically align image / bullet with item
-  // --------------------------------------------------
-  &.align-items-vert-center &-item__inner {
-    align-items: center;
-  }
-
   // Horizontally align items
   // --------------------------------------------------
-  &.align-items-hori-center &__container.has-columns {
-    justify-content: center;
-  }
+  &.item-justify-start &__container.has-columns { justify-content: flex-start; }
+  &.item-justify-center &__container.has-columns { justify-content: center; }
+  &.item-justify-end &__container.has-columns { justify-content: flex-end; }
+
+  // Vertically align image / bullet
+  // --------------------------------------------------
+  &.bullet-align-start &-item__inner { align-items: flex-start; }
+  &.bullet-align-center &-item__inner { align-items: center; }
+  &.bullet-align-end &-item__inner { align-items: flex-end; }
 }
 
 .list-item {
