@@ -2,7 +2,12 @@
 
 **List** is a *presentation component* which displays text in a list. The list items can be displayed with or without an image. If no image is defined then either a plain bullet (unordered) or numerical bullet that counts upwards per item (ordered) will display.
 
-<img src="demo.gif" alt="the list component in action" align="right">
+## Support layouts
+
+Layout | Image | Layout | Image
+--- | --- | --- | ---
+Images (maximum width of 64px) | <img width="450" alt="Screenshot 2022-12-02 at 11 59 53" src="https://user-images.githubusercontent.com/11569678/205288598-55092153-fcbf-40ec-9801-e81d0bb055fe.png"> | Unordered and ordered lists | <img width="450" alt="Screenshot 2022-12-02 at 12 00 27" src="https://user-images.githubusercontent.com/11569678/205288646-0d5050ce-6bd1-4ab3-9779-f0d15620e92c.png">
+Columns with images | <img width="450" alt="Screenshot 2022-12-02 at 12 01 08" src="https://user-images.githubusercontent.com/11569678/205288664-c060d166-e155-44fd-9630-0888f70a1431.png"> | Columns with unordered and ordered lists | <img width="450" alt="Screenshot 2022-12-02 at 12 01 41" src="https://user-images.githubusercontent.com/11569678/205288683-fd1faf84-0266-4db0-a681-9016e0f0c049.png">
 
 ## Attributes
 
