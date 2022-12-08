@@ -1,0 +1,152 @@
+{
+  "$anchor": "list-component",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$merge": {
+    "source": {
+      "$ref": "component"
+    },
+    "with": {
+      "properties": {
+        "_supportedLayout": {
+          "type": "string",
+          "title": "Supported layout",
+          "default": "both",
+          "enum": [
+            "full-width",
+            "half-width",
+            "both"
+          ],
+          "_adapt": {
+            "editorOnly": true
+          }
+        },
+        "instruction": {
+          "type": "string",
+          "title": "Instruction",
+          "default": "",
+          "_adapt": {
+            "translatable": true
+          }
+        },
+        "_columns": {
+          "type": "number",
+          "title": "Columns",
+          "description": "Set the number of columns. If value is '0', component uses the default layout.",
+          "default": 0
+        },
+        "_orderedList": {
+          "type": "boolean",
+          "title": "Ordered list",
+          "description": "Set items as ordered list.",
+          "default": false
+        },
+        "_animateList": {
+          "type": "boolean",
+          "title": "Animate list",
+          "description": "Animate the list items into view.",
+          "default": false
+        },
+        "_percentInviewVertical": {
+          "type": "number",
+          "title": "Percent in view",
+          "description": "Controls what percentage of the list items height needs to be in the viewport in order for the items to animate.",
+          "default": 70
+        },
+        "_itemHorizontalAlignment": {
+          "type": "string",
+          "title": "Item horizontal alignment",
+          "description": "Controls the horizontal alignment of the list items. This setting will only take affect if the `_columns` property has a value above `0`. Refer to the plugins readme for further info.",
+          "default": "start",
+          "enum": [
+            "start",
+            "center",
+            "end"
+          ],
+          "_backboneForms": "Select"
+        },
+        "_bulletAlignment": {
+          "type": "string",
+          "title": "Image or bullet alignment",
+          "description": "Controls the vertical alignment of the list item image or bullet alongside the text content. If the `_columns` property has a value above `0` then this properties alignment switches from vertical to horizontal. Refer to the plugins readme for further info.",
+          "default": "start",
+          "enum": [
+            "start",
+            "center",
+            "end"
+          ],
+          "_backboneForms": "Select"
+        },
+        "_items": {
+          "type": "array",
+          "title": "Items",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Item title",
+                "description": "Title of the list item",
+                "default": "",
+                "_adapt": {
+                  "translatable": true
+                }
+              },
+              "body": {
+                "type": "string",
+                "title": "Item body",
+                "description": "Content area of the list item",
+                "default": "",
+                "_adapt": {
+                  "translatable": true
+                },
+                "_backboneForms": "TextArea"
+              },
+              "_classes": {
+                "type": "string",
+                "title": "Classes",
+                "description": "Used to style or manipulate the look and feel of this list item. These are predefined in the theme or added in Project Settings > Custom CSS/Less code.",
+                "default": ""
+              },
+              "_graphic": {
+                "type": "object",
+                "title": "Graphic",
+                "default": {},
+                "properties": {
+                  "src": {
+                    "type": "string",
+                    "isObjectId": true,
+                    "title": "Source",
+                    "description": "Image to be displayed in the list item.",
+                    "_backboneForms": {
+                      "type": "Asset",
+                      "media": "image"
+                    }
+                  },
+                  "alt": {
+                    "type": "string",
+                    "title": "Alternative text",
+                    "description": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
+                    "default": "",
+                    "_adapt": {
+                      "translatable": true
+                    }
+                  },
+                  "attribution": {
+                    "type": "string",
+                    "title": "Attribution",
+                    "description": "Text to be displayed as an attribution for the list item image.",
+                    "default": "",
+                    "_adapt": {
+                      "translatable": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
