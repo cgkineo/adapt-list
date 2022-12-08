@@ -16,5 +16,6 @@
         "adapt-plugin",
         "adapt-component"
     ],
-    "license": "GPL-3.0"
+    "license": "GPL-3.0",
+    "targetAttribute": "_list"
 }
