@@ -43,7 +43,7 @@ Controls the horizontal alignment of the list items. This setting will only take
 ### \_bulletAlignment (string):
 Controls the vertical alignment of the list item image or bullet alongside the text content. If the `_columns` property has a value above `0` then this properties alignment switches from vertical to horizontal. Values available utilise the CSS property [`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items). The default value is `start`. It contains the following settings:
 * `start`: Aligns the list item image or bullet to the top of the container. If `_columns` is used then this setting aligns the list item image or bullet with the natural page direction. In a left-to-right course this is left by default.
-* `center`: Aligns the list item image or bullet to the center of the container vertically. If `_columns` is used then this settings aligns the list item image or bullet horizontally.
+* `center`: Aligns the list item image or bullet to the center of the container vertically. If `_columns` is used then this setting aligns the list item image or bullet horizontally.
 * `end`: Aligns the list item image or bullet to the bottom of the container. If `_columns` is used then this setting aligns the list item image or bullet to the opposite side of the natural page direction. In a left-to-right course this is right by default.
 
 ### \_items (object):
