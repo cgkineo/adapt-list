@@ -26,7 +26,7 @@ This defines the horizontal position of the component in the block. Acceptable v
 Defines the number of columns wide the **\_items** are displayed in. If the value of **\_numberOfColumns** is `2`, each **\_items** will be 50% wide. Similarly, if the value of **\_numberOfColumns** is `3`, each **\_items** will be 33.3% wide. In mobile view, the width of each **\_items** is 100%.
 
 ### \_orderedList (boolean):
-If set to `true`, each item in the list will numbered. This setting will only take affect if there are no list item images defined. The default value is `false`.
+If set to `true`, each item in the list will be numbered. This setting will only take affect if there are no list item images defined. The default value is `false`.
 
 ### \_animateList (boolean):
 If set to `true`, the list of items will animate when scrolled into view. The default value is `false`.
@@ -41,7 +41,7 @@ Controls the horizontal alignment of the list items. This setting will only take
 * `end`: Aligns the list item to the opposite side of the natural page direction. In a left-to-right course this is right by default.
 
 ### \_bulletAlignment (string):
-Controls the vertical alignment of the list item image or bullet alongside the text content. If the `_columns` property has a value above `0` then this properties alignment switches from vertical to horizontal. Values available utilise the CSS property [`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items). The default value is `start`. It contains the following settings:
+Controls the vertical alignment of the list item image or bullet alongside the text content. If the `_columns` property has a value above `0` then the alignment switches from vertical to horizontal. Values available utilise the CSS property [`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items). The default value is `start`. It contains the following settings:
 * `start`: Aligns the list item image or bullet to the top of the container. If `_columns` is used then this setting aligns the list item image or bullet with the natural page direction. In a left-to-right course this is left by default.
 * `center`: Aligns the list item image or bullet to the center of the container vertically. If `_columns` is used then this setting aligns the list item image or bullet horizontally.
 * `end`: Aligns the list item image or bullet to the bottom of the container. If `_columns` is used then this setting aligns the list item image or bullet to the opposite side of the natural page direction. In a left-to-right course this is right by default.
@@ -52,7 +52,8 @@ Multiple items may be created. Each item represents one list item for this compo
 #### title (string):
 This is the title text for the list item.
 
-#### body (string): This is the main body text for the list item.
+#### body (string):
+This is the main body text for the list item.
 
 #### \_graphic (object):
 The graphic object that defines the image which is rendered alongside the body text. It contains the following settings:
