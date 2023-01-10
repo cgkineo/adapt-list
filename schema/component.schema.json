@@ -29,9 +29,7 @@
           "title": "Instruction",
           "description": "This is the instruction text",
           "default": "",
-          "_adapt": {
-            "translatable": true
-          }
+          "translatable": true
         },
         "_columns": {
           "type": "number",
@@ -44,18 +42,14 @@
           "title": "Ordered list",
           "description": "Set items as ordered list",
           "default": false,
-          "_adapt": {
-            "translatable": false
-          }
+          "translatable": true
         },
         "_animateList": {
           "type": "boolean",
           "title": "Animate list",
           "description": "Animate the list items into view",
           "default": false,
-          "_adapt": {
-            "translatable": false
-          }
+          "translatable": true
         },
         "_percentInviewVertical": {
           "type": "number",
@@ -102,18 +96,14 @@
                 "title": "Item title",
                 "description": "Title of the list item",
                 "default": "",
-                "_adapt": {
-                  "translatable": true
-                }
+                "translatable": true
               },
               "body": {
                 "type": "string",
                 "title": "Item body",
                 "description": "Content area of the list item",
                 "default": "",
-                "_adapt": {
-                  "translatable": true
-                },
+                "translatable": true,
                 "_backboneForms": "TextArea"
               },
               "_classes": {
@@ -145,18 +135,14 @@
                     "title": "Alternative text",
                     "description": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
                     "default": "",
-                    "_adapt": {
-                      "translatable": true
-                    }
+                    "translatable": true
                   },
                   "attribution": {
                     "type": "string",
                     "title": "Attribution",
                     "description": "Text to be displayed as an attribution for the list item image.",
                     "default": "",
-                    "_adapt": {
-                      "translatable": true
-                    }
+                    "translatable": true
                   }
                 }
               }
