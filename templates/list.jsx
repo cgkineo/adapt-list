@@ -1,7 +1,7 @@
 import Adapt from 'core/js/adapt';
 import React from 'react';
 import a11y from 'core/js/a11y';
-import { templates, classes, html, compile } from 'core/js/reactHelpers';
+import { templates, classes } from 'core/js/reactHelpers';
 
 export default function List({ _columns, _orderedList, _items, ...props }) {
   const hasColumns = _columns > 1;
@@ -53,17 +53,13 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
                       role="heading"
                       aria-level={a11y.ariaLevel({ id: _id, level: 'componentItem', override: _ariaLevel ?? itemAriaLevel })}
                     >
-                      <div className="list-item__title-inner">
-                        {html(compile(title))}
-                      </div>
+                      <div className="list-item__title-inner" dangerouslySetInnerHTML={{ __html: title }} />
                     </div>
                   }
 
                   {body &&
                     <div className="list-item__body">
-                      <div className="list-item__body-inner">
-                        {html(compile(body))}
-                      </div>
+                      <div className="list-item__body-inner" dangerouslySetInnerHTML={{ __html: body }} />
                     </div>
                   }
                 </div>
