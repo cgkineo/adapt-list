@@ -15,11 +15,6 @@
           "type": "string",
           "title": "Supported layout",
           "default": "both",
-          "enum": [
-            "full-width",
-            "half-width",
-            "both"
-          ],
           "_adapt": {
             "editorOnly": true
           }
@@ -29,7 +24,9 @@
           "title": "Instruction",
           "description": "This is the instruction text",
           "default": "",
-          "translatable": true
+          "_adapt": {
+            "translatable": true
+          }
         },
         "_columns": {
           "type": "number",
@@ -42,14 +39,18 @@
           "title": "Ordered list",
           "description": "Set items as ordered list",
           "default": false,
-          "translatable": true
+          "_adapt": {
+            "translatable": false
+          }
         },
         "_animateList": {
           "type": "boolean",
           "title": "Animate list",
           "description": "Animate the list items into view",
           "default": false,
-          "translatable": true
+          "_adapt": {
+            "translatable": false
+          }
         },
         "_percentInviewVertical": {
           "type": "number",
@@ -96,14 +97,18 @@
                 "title": "Item title",
                 "description": "Title of the list item",
                 "default": "",
-                "translatable": true
+                "_adapt": {
+                  "translatable": true
+                }
               },
               "body": {
                 "type": "string",
                 "title": "Item body",
                 "description": "Content area of the list item",
                 "default": "",
-                "translatable": true,
+                "_adapt": {
+                  "translatable": true
+                },
                 "_backboneForms": "TextArea"
               },
               "_classes": {
@@ -123,7 +128,7 @@
                   "src": {
                     "type": "string",
                     "isObjectId": true,
-                    "title": "Source",
+                    "title": "Src",
                     "description": "Image to be displayed in the list item.",
                     "_backboneForms": {
                       "type": "Asset",
@@ -135,14 +140,18 @@
                     "title": "Alternative text",
                     "description": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
                     "default": "",
-                    "translatable": true
+                    "_adapt": {
+                      "translatable": true
+                    }
                   },
                   "attribution": {
                     "type": "string",
                     "title": "Attribution",
                     "description": "Text to be displayed as an attribution for the list item image.",
                     "default": "",
-                    "translatable": true
+                    "_adapt": {
+                      "translatable": true
+                    }
                   }
                 }
               }
