@@ -1,4 +1,25 @@
 {
+<<<<<<< HEAD
+    "name": "adapt-list",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/cgkineo/adapt-list.git"
+    },
+    "framework": ">=5.14",
+    "version": "5.1.1",
+    "homepage": "https://github.com/cgkineo/adapt-list",
+    "issues": "https://github.com/cgkineo/adapt-list/issues",
+    "component": "list",
+    "displayName": "List",
+    "description": "A text component in which you can add list items.",
+    "main": "/js/adapt-list.js",
+    "keywords": [
+        "adapt-plugin",
+        "adapt-component"
+    ],
+    "license": "GPL-3.0",
+    "targetAttribute": "_list"
+=======
   "name": "adapt-list",
   "repository": {
     "type": "git",
@@ -17,7 +38,6 @@
     "adapt-component"
   ],
   "license": "GPL-3.0",
-  "targetAttribute": "_list",
   "private": true,
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^9.0.2",
@@ -59,4 +79,5 @@
       ]
     ]
   }
+>>>>>>> master
 }

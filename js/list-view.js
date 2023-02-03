@@ -15,10 +15,19 @@ class ListView extends ComponentView {
   postRender() {
     this.setReadyStatus();
     this.setupInviewCompletion('.component__widget');
+    this.contentAlignment();
 
     if (this.model.get('_animateList') && (!$('html').hasClass('a11y-no-animations'))) {
       this.$('.list__container').on('onscreen.animate', this.checkIfOnScreen.bind(this));
     }
+  }
+
+  contentAlignment() {
+    const _horizontalAlignment = this.model.get('_itemHorizontalAlignment');
+    const _bulletAlignment = this.model.get('_bulletAlignment');
+
+    if (_horizontalAlignment) this.$el.addClass(`item-justify-${_horizontalAlignment}`);
+    if (_bulletAlignment) this.$el.addClass(`bullet-align-${_bulletAlignment}`);
   }
 
   /**

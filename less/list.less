@@ -1,4 +1,30 @@
 .list {
+  // Column layout
+  // --------------------------------------------------
+  &__container.has-columns &-item.has-image &-item__inner {
+    flex-wrap: wrap;
+  }
+
+  &__container.has-columns &-item__image-container {
+    width: 100%;
+  }
+
+  &__container.has-columns &-item__image-container + &-item__content {
+    width: 100%;
+  }
+
+  @media (min-width: @device-width-medium) {
+    &__container.has-columns {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    &__container.has-columns &-item__inner {
+      flex-direction: column;
+    }
+  }
+
   // Ordered list set up
   // --------------------------------------------------
   &__container.is-ordered-list &-item {
@@ -8,6 +34,18 @@
   &__container.is-ordered-list &-item__bullet:before {
     content: counter(step-counter);
   }
+
+  // Horizontally align items
+  // --------------------------------------------------
+  &.item-justify-start &__container.has-columns { justify-content: flex-start; }
+  &.item-justify-center &__container.has-columns { justify-content: center; }
+  &.item-justify-end &__container.has-columns { justify-content: flex-end; }
+
+  // Vertically align image / bullet
+  // --------------------------------------------------
+  &.bullet-align-start &-item__inner { align-items: flex-start; }
+  &.bullet-align-center &-item__inner { align-items: center; }
+  &.bullet-align-end &-item__inner { align-items: flex-end; }
 }
 
 .list-item {
@@ -26,11 +64,19 @@
   &__image-container {
     align-items: flex-start;
     justify-content: center;
-    width: 20%;
+    width: 5rem;
   }
 
   &__image-container + &__content {
-    width: 80%;
+    width: calc(~'100% - 5rem');
+  }
+
+  // Ordered / unordered list bullet
+  // --------------------------------------------------
+  &__bullet:before {
+    content: "";
+    height: @icon-size;
+    width: @icon-size;
   }
 }
 
@@ -38,6 +84,25 @@
 // THEME
 // --------------------------------------------------
 .list {
+  // Column layout
+  // --------------------------------------------------
+  &__container.has-columns &-item__image-container {
+    padding-right: inherit;
+    margin-bottom: @item-margin * 2;
+  }
+
+  @media (min-width: @device-width-medium) {
+    &__container.has-columns &-item__inner {
+      margin: @item-margin;
+    }
+
+    &__container.has-columns &-item__bullet {
+      margin-bottom: @item-margin * 2;
+      padding-left: inherit;
+      padding-right: inherit;
+    }
+  }
+
   // Animated list set up
   // --------------------------------------------------
   &.is-animated-list &__widget {
@@ -49,59 +114,21 @@
     right: -100%;
     opacity: 0;
     .transition(all .8s ease-in-out);
-    
+
     .dir-rtl & {
       right: inherit;
       left: -100%;
     }
+  }
 
-    &.is-animating {
-      right: 0;
-      opacity: 1;
-      
-      .dir-rtl & {
-        right: inherit;
-        left: 0;
-      }
+  &.is-animated-list &-item.is-animating {
+    right: 0;
+    opacity: 1;
+
+    .dir-rtl & {
+      right: inherit;
+      left: 0;
     }
-  }
-
-  // Column layout
-  // --------------------------------------------------
-  &__container.has-columns {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-  }
-
-  &__container.has-columns &-item {
-    width: 100%;
-
-    @media (min-width: @device-width-small) {
-      width: 50%;
-    }
-  }
-
-  &__container.has-columns &-item__inner {
-    flex-direction: column;
-    margin: @item-margin;
-  }
-
-  &__container.has-columns &-item__image-container {
-    width: 100%;
-    padding: inherit;
-    margin-bottom: @item-margin;
-  }
-
-  &__container.has-columns &-item__content {
-    width: 100%;
-  }
-
-  // Vertically align image / number with item
-  // --------------------------------------------------
-  &.align-items-vert-center &-item__inner {
-    align-items: center;
   }
 }
 
@@ -118,7 +145,11 @@
     margin-bottom: @item-title-margin;
   }
 
-  // List with image / bullet (ordered / unordered)
+  &__content {
+    width: 100%;
+  }
+
+  // List with image
   // --------------------------------------------------
   &__image-container {
     padding-right: @item-padding;
@@ -129,19 +160,14 @@
     }
   }
 
+  // Ordered / unordered list bullet
+  // --------------------------------------------------
   &__bullet {
     padding-left: @item-padding;
     padding-right: @item-padding;
   }
 
-  // Ordered / unordered list bullet
-  // --------------------------------------------------
   &__bullet:before {
-    content: "";
-    height: @icon-size * 2;
-    width: @icon-size * 2;
-    padding: @icon-size / 2;
-    .item-title;
     text-align: center;
     background-color: @item-color;
     color: @item-color-inverted;
