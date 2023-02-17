@@ -53,13 +53,13 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
                       role="heading"
                       aria-level={a11y.ariaLevel({ id: _id, level: 'componentItem', override: _ariaLevel ?? itemAriaLevel })}
                     >
-                      <div className="list-item__title-inner" dangerouslySetInnerHTML={{ __html: compile(title, { props }) }} />
+                      <div className="list-item__title-inner" dangerouslySetInnerHTML={{ __html: compile(title, props) }} />
                     </div>
                   }
 
                   {body &&
                     <div className="list-item__body">
-                      <div className="list-item__body-inner" dangerouslySetInnerHTML={{ __html: compile(body, { props }) }} />
+                      <div className="list-item__body-inner" dangerouslySetInnerHTML={{ __html: compile(body, props) }} />
                     </div>
                   }
                 </div>
