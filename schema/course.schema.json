@@ -15,6 +15,7 @@
             "_list": {
               "type": "object",
               "default": {},
+              "title": "List",
               "properties": {
                 "ariaRegion": {
                   "type": "string",
