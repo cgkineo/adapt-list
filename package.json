@@ -10,6 +10,7 @@
   "issues": "https://github.com/cgkineo/adapt-list/issues",
   "component": "list",
   "displayName": "List",
+  "targetAttribute": "_list",
   "description": "A text component in which you can add list items.",
   "main": "/js/adapt-list.js",
   "keywords": [
