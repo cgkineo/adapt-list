@@ -83,6 +83,16 @@
       "title": "Image or bullet alignment",
       "help": "Controls the vertical alignment of the list item image or bullet alongside the text content. If the `_columns` property has a value above `0` then this properties alignment switches from vertical to horizontal. Refer to the plugins readme for further info."
     },
+    "bodyAfter": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "title": "Body text after list items",
+      "help": "This is the body text that will appear after the list items.",
+      "translatable": true
+    },
     "_items": {
       "type": "array",
       "required": true,

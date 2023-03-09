@@ -85,6 +85,15 @@
           ],
           "_backboneForms": "Select"
         },
+        "bodyAfter": {
+          "type": "string",
+          "title": "Body text after list items",
+          "description": "This is the body text that will appear after the list items.",
+          "default": "",
+          "_adapt": {
+            "translatable": true
+          }
+        },
         "_items": {
           "type": "array",
           "title": "List Items",
