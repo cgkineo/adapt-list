@@ -7,7 +7,8 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
   const hasColumns = _columns > 1;
   const {
     _id,
-    _ariaLevel
+    _ariaLevel,
+    bodyAfter
   } = props;
   const itemAriaLevel = _.isNumber(_ariaLevel) && _ariaLevel !== 0 ? _ariaLevel + 1 : _ariaLevel;
   return (
@@ -69,6 +70,11 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
           )}
         </div>
       </div>
+      {bodyAfter &&
+        <div className="component__body-after list__body-after">
+          <div className="component__body-after-inner list__body-after-inner" dangerouslySetInnerHTML={{ __html: compile(bodyAfter, props) }} />
+        </div>
+      }
     </div>
   );
 }
