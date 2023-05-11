@@ -1,8 +1,8 @@
-import Adapt from 'core/js/adapt';
-import ListModel from './list-model';
-import ListView from './list-view';
+import components from 'core/js/components';
+import ListModel from './ListModel';
+import ListView from './ListView';
 
-export default Adapt.register('list', {
+export default components.register('list', {
   model: ListModel,
   view: ListView
 });

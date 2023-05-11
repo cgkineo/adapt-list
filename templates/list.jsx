@@ -29,15 +29,17 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
               className={classes([
                 'list-item',
                 _isActive && 'is-animating',
-                _graphic.src && 'has-image',
+                _graphic?.src && 'has-image',
                 _classes
               ])}
               role="listitem"
               style={(hasColumns && Adapt.device.screenSize === 'large' && { width: `${100 / _columns}%` }) || null}
             >
               <div className="list-item__inner">
-                {!_graphic.src ?
-                  <div className="list-item__bullet" aria-hidden="true"></div> :
+                {!_graphic?.src &&
+                  <div className="list-item__bullet" aria-hidden="true" />
+                }
+                {_graphic?.src &&
                   <templates.image {..._graphic}
                     classNamePrefixes={['component-item', 'list-item']}
                     attributionClassNamePrefixes={['component', 'list']}
