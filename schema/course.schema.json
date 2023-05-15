@@ -12,16 +12,22 @@
           "type": "object",
           "default": {},
           "properties": {
-            "_list": {
+            "_components": {
               "type": "object",
               "default": {},
-              "title": "List",
               "properties": {
-                "ariaRegion": {
-                  "type": "string",
-                  "title": "ARIA region",
-                  "default": "",
-                  "translatable": true
+                "_list": {
+                  "type": "object",
+                  "default": {},
+                  "title": "List",
+                  "properties": {
+                    "ariaRegion": {
+                      "type": "string",
+                      "title": "ARIA region",
+                      "default": "",
+                      "translatable": true
+                    }
+                  }
                 }
               }
             }
