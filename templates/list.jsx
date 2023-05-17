@@ -33,7 +33,7 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
                 _classes
               ])}
               role="listitem"
-              style={(hasColumns && Adapt.device.screenSize === 'large' && { width: `${100 / _columns}%` }) || null}
+              style={(hasColumns && Adapt.device.screenSize === 'medium' && { width: `${100 / _columns}%` }) || null}
             >
               <div className="list-item__inner">
                 {!_graphic?.src &&
