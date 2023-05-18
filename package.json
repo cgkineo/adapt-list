@@ -4,7 +4,7 @@
     "type": "git",
     "url": "git://github.com/cgkineo/adapt-list.git"
   },
-  "framework": ">=5.14",
+  "framework": ">=5.31.4",
   "version": "5.2.7",
   "homepage": "https://github.com/cgkineo/adapt-list",
   "issues": "https://github.com/cgkineo/adapt-list/issues",

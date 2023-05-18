@@ -1,4 +1,4 @@
-import Adapt from 'core/js/adapt';
+import device from 'core/js/device';
 import React from 'react';
 import a11y from 'core/js/a11y';
 import { templates, classes, compile } from 'core/js/reactHelpers';
@@ -33,7 +33,7 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
                 _classes
               ])}
               role="listitem"
-              style={(hasColumns && Adapt.device.screenSize === 'large' && { width: `${100 / _columns}%` }) || null}
+              style={(hasColumns && device.isScreenSizeMin('medium') && { width: `${100 / _columns}%` }) || null}
             >
               <div className="list-item__inner">
                 {!_graphic?.src &&
