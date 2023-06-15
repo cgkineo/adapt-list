@@ -92,7 +92,8 @@
           "default": "",
           "_adapt": {
             "translatable": true
-          }
+          },
+          "_backboneForms": "TextArea"
         },
         "_items": {
           "type": "array",

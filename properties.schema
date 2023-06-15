@@ -87,7 +87,7 @@
       "type": "string",
       "required": false,
       "default": "",
-      "inputType": "Text",
+      "inputType": "TextArea",
       "validators": [],
       "title": "Body text after list items",
       "help": "This is the body text that will appear after the list items.",
