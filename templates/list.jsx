@@ -30,6 +30,8 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
                 'list-item',
                 _isActive && 'is-animating',
                 _graphic?.src && 'has-image',
+                title && 'has-title',
+                body && 'has-body',
                 _classes
               ])}
               role="listitem"
@@ -49,10 +51,7 @@ export default function List({ _columns, _orderedList, _items, ...props }) {
                 <div className="list-item__content">
                   {title &&
                     <div
-                      className={classes([
-                        'list-item__title',
-                        body && 'has-margin'
-                      ])}
+                      className="list-item__title"
                       role="heading"
                       aria-level={a11y.ariaLevel({ id: _id, level: 'componentItem', override: _ariaLevel ?? itemAriaLevel })}
                     >

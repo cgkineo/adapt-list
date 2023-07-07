@@ -84,10 +84,23 @@
 
   // Ordered / unordered list bullet
   // --------------------------------------------------
+  &__bullet {
+    align-items: center;
+    height: (@item-title-size * @item-title-line-height);
+  }
+
+  &:not(.has-title) &__bullet {
+    height: (@body-size * @body-line-height);
+  }
+
   &__bullet:before {
     content: "";
+    // height: (@item-title-size * @item-title-line-height);
+    // width: (@item-title-size * @item-title-line-height);
     height: 0.65rem;
     width: 0.65rem;
+    line-height: @item-title-line-height;
+    // line-height: (@item-title-size * @item-title-line-height);
   }
 }
 
@@ -148,7 +161,7 @@
     .item-title;
   }
 
-  &__title.has-margin {
+  &.has-title.has-body &__title {
     margin-bottom: @item-title-margin;
   }
 
@@ -179,6 +192,5 @@
     background-color: @item-color;
     color: @item-color-inverted;
     border-radius: 50%;
-    margin-top: 0.5rem;
   }
 }
