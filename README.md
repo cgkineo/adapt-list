@@ -75,7 +75,6 @@ Optional text to be displayed as an [attribution](https://wiki.creativecommons.o
 No known limitations.
 
 ----------------------------
-**Framework versions:** 5.14+ <br>
 **Author / maintainer:** Kineo <br>
 **Accessibility support:** WAI AA <br>
 **RTL support:** Yes <br>
