@@ -33,8 +33,9 @@ class ListView extends ComponentView {
   /**
    * Kicks off the list item animation once the list container is at least xx% on screen
    */
-  checkIfOnScreen({ currentTarget }, { percentInviewVertical }) {
-    if (percentInviewVertical < this.model.get('_percentInviewVertical')) return;
+  checkIfOnScreen({ currentTarget }, options) {
+    const { onscreen, percentInviewVertical } = options;
+    if (!onscreen || percentInviewVertical < this.model.get('_percentInviewVertical')) return;
 
     $(currentTarget).off('onscreen.animate');
     this.animateListItems();
