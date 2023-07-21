@@ -84,10 +84,19 @@
 
   // Ordered / unordered list bullet
   // --------------------------------------------------
+  &__bullet {
+    align-items: center;
+    height: (@item-title-size * @item-title-line-height);
+  }
+
+  &:not(.has-title) &__bullet {
+    height: (@body-size * @body-line-height);
+  }
+
   &__bullet:before {
     content: "";
-    height: @icon-size;
-    width: @icon-size;
+    height: 0.5rem;
+    width: 0.5rem;
   }
 }
 
@@ -148,8 +157,8 @@
     .item-title;
   }
 
-  &__title.has-margin {
-    margin-bottom: @item-title-margin;
+  &__title + &__body {
+    margin-top: @item-title-margin;
   }
 
   &__content {
