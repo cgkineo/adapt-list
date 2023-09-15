@@ -46,9 +46,6 @@ Controls the vertical alignment of the list item image or bullet alongside the t
 * `center`: Aligns the list item image or bullet to the center of the container vertically. If `_columns` is used then this setting aligns the list item image or bullet horizontally.
 * `end`: Aligns the list item image or bullet to the bottom of the container. If `_columns` is used then this setting aligns the list item image or bullet to the opposite side of the natural page direction. In a left-to-right course this is right by default.
 
-### bodyAfter (string):
-This is the body text that will appear after the list items.
-
 ### \_items (object):
 Multiple items may be created. Each item represents one list item for this component. It contains the following settings:
 
@@ -69,6 +66,9 @@ The alternative text for this image. Assign [alt text](https://github.com/adaptl
 
 ##### attribution (string):
 Optional text to be displayed as an [attribution](https://wiki.creativecommons.org/Best_practices_for_attribution). By default it is displayed below the image. Adjust positioning by modifying CSS. Text can contain HTML tags, e.g., `Copyright © 2015 by <b>Lukasz 'Severiaan' Grela</b>`
+
+### bodyAfter (string):
+This is the body text that will appear after the list items.
 
 ## Limitations
 
