@@ -8,7 +8,6 @@
         "title": "List component",
         "displayTitle": "List component",
         "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<br/><br/>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-        "bodyAfter": "",
         "instruction": "",
         "_columns": 0,
         "_orderedList": false,
@@ -48,6 +47,7 @@
                 }
             }
         ],
+        "bodyAfter": "",
         "_pageLevelProgress": {
             "_isEnabled": true
         }
