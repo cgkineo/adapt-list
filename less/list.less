@@ -24,7 +24,7 @@
       flex-direction: column;
     }
   }
-  
+
   &__container.has-columns &-item,
   &__container:not(.has-columns) &-item:not(:last-child) {
     margin-bottom: @item-margin * 2;
@@ -168,12 +168,7 @@
   // List with image
   // --------------------------------------------------
   &__image-container {
-    padding-right: @item-padding;
-
-    .dir-rtl & {
-      padding-right: inherit;
-      padding-left: @item-padding;
-    }
+    padding-inline-end: @item-padding;
   }
 
   // Ordered / unordered list bullet
