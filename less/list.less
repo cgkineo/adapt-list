@@ -122,9 +122,8 @@
     }
 
     &__container.has-columns &-item__bullet {
+      padding-inline: inherit;
       margin-bottom: @item-margin * 2;
-      padding-inline-start: inherit;
-      padding-inline-end: inherit;
     }
   }
 
@@ -179,8 +178,7 @@
   // Ordered / unordered list bullet
   // --------------------------------------------------
   &__bullet {
-    padding-inline-start: @item-padding;
-    padding-inline-end: @item-padding;
+    padding-inline: @item-padding;
   }
 
   &__bullet:before {
