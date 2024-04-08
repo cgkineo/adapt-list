@@ -1,6 +1,6 @@
 # adapt-list
 
-**List** is a *presentation component* which displays text in a list. The list items can be displayed with or without an image. If no image is defined then either a plain bullet (unordered) or numerical bullet that counts upwards per item (ordered) will display.
+**List** is a *presentation component* which displays text in a list. The list items can be displayed with or without an image. If no image is defined then either a plain bullet (unordered) or numerical bullet that counts upwards per item (ordered) will display. 
 
 ## Support layouts
 
