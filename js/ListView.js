@@ -4,11 +4,7 @@ class ListView extends ComponentView {
 
   className() {
     let classes = super.className();
-    // don't animate when Visua11y 'no animations' is set
-    if (this.model.get('_animateList') && (!$('html').hasClass('a11y-no-animations'))) {
-      classes += ' is-animated-list';
-    }
-
+    if (this.isAnimatedList) classes += ' is-animated-list is-animating';
     return classes;
   }
 
@@ -17,7 +13,7 @@ class ListView extends ComponentView {
     this.setupInviewCompletion('.component__widget');
     this.contentAlignment();
 
-    if (this.model.get('_animateList') && (!$('html').hasClass('a11y-no-animations'))) {
+    if (this.isAnimatedList) {
       this.$('.list__container').on('onscreen.animate', this.checkIfOnScreen.bind(this));
     }
   }
@@ -45,8 +41,13 @@ class ListView extends ComponentView {
    * animates the list items in one-by-one
    */
   animateListItems() {
-    this.model.getChildren().forEach((listItem, index) => {
+    const items = this.model.getChildren();
+    const itemCount = items.length;
+    items.forEach((listItem, index) => {
       setTimeout(listItem.toggleActive.bind(listItem, true), 200 * index);
+      if (index !== (itemCount - 1)) return;
+      const $item = this.$('.list-item').eq(index);
+      $item.one('transitionend', () => this.$el.removeClass('is-animating'));
     });
   }
 
@@ -54,6 +55,11 @@ class ListView extends ComponentView {
     this.$('.list__container').off('onscreen.animate');
 
     super.remove();
+  }
+
+  get isAnimatedList() {
+    // don't animate when Visua11y 'no animations' is set
+    return this.model.get('_animateList') && (!$('html').hasClass('a11y-no-animations'));
   }
 };
 

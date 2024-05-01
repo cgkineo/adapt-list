@@ -57,6 +57,10 @@
   &__body-after {
     margin-top: @component-body-margin;
   }
+
+  &.is-animating &__body-after {
+    .u-visibility-hidden;
+  }
 }
 
 .list-item {
