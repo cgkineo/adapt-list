@@ -1,10 +1,14 @@
 import ComponentView from 'core/js/views/componentView';
+import { transitionsEnded } from 'core/js/transitions';
 
 class ListView extends ComponentView {
 
   className() {
     let classes = super.className();
-    if (this.isAnimatedList) classes += ' is-animated-list is-animating';
+    if (this.isAnimatedList) {
+      classes += ' is-animated-list';
+      if (!this._hasAnimated) classes += ' is-animating';
+    }
     return classes;
   }
 
@@ -44,10 +48,14 @@ class ListView extends ComponentView {
     const items = this.model.getChildren();
     const itemCount = items.length;
     items.forEach((listItem, index) => {
-      setTimeout(listItem.toggleActive.bind(listItem, true), 200 * index);
-      if (index !== (itemCount - 1)) return;
-      const $item = this.$('.list-item').eq(index);
-      $item.one('transitionend', () => this.$el.removeClass('is-animating'));
+      setTimeout(async () => {
+        listItem.toggleActive(true);
+        if (index !== (itemCount - 1)) return;
+        const $item = this.$('.list-item').eq(index);
+        await transitionsEnded($item);
+        this._hasAnimated = true;
+        this.$el.removeClass('is-animating');
+      }, 200 * index);
     });
   }
 
