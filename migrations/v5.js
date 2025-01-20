@@ -1,8 +1,8 @@
 import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
 
-describe('List - v1.0.0 > v5.2.0', async () => {
+describe('List - v5.1.0 > v5.2.0', async () => {
   let lists;
-  whereFromPlugin('List - from v1.0.0', { name: 'adapt-list', version: '<=5.2.0' });
+  whereFromPlugin('List - from v5.1.0', { name: 'adapt-list', version: '<=5.2.0' });
   whereContent('where content 1', async content => {
     lists = content.filter(({ _component }) => _component === 'list');
     if (lists) return true;
