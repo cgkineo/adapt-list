@@ -1,5 +1,29 @@
 import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
 
+describe('List - v1.0.0 > v5.2.0', async () => {
+  let lists;
+  whereFromPlugin('List - from v1.0.0', { name: 'adapt-list', version: '<=5.2.0' });
+  whereContent('where content 1', async content => {
+    lists = content.filter(({ _component }) => _component === 'list');
+    if (lists) return true;
+  });
+  mutateContent('List - change _imageSrc attribute to _graphic object attribute', async content => {
+    lists.forEach(list => {
+      list._items.forEach(item => {
+        const src = item._imageSrc;
+        const alt = item.alt;
+        item._graphic = { src, alt, attribution: '' };
+      });
+    });
+    return true;
+  });
+  // checkContent('List - check _graphic attribute', async content => {
+  //   const isValid = content.some(({ bodyAfter }) => bodyAfter);
+  //   if (!isValid) throw new Error('found invalid _graphic attribute');
+  //   return true;
+  // });
+  updatePlugin('List - update to v5.2.0', { name: 'adapt-list', version: '5.2.0', framework: '>=5.14.0' });
+});
 
 describe('List - v5.2.4 > v5.2.5', async () => {
   let lists;
@@ -8,11 +32,11 @@ describe('List - v5.2.4 > v5.2.5', async () => {
     lists = content.filter(({ _component }) => _component === 'list');
     if (lists) return true;
   });
-  mutateContent('Narrative - add bodyAfter attribute', async content => {
+  mutateContent('List - add bodyAfter attribute', async content => {
     lists.forEach(item => (item.bodyAfter = ''));
     return true;
   });
-  checkContent('Narrative - check bodyAfter attribute', async content => {
+  checkContent('List - check bodyAfter attribute', async content => {
     const isValid = content.some(({ bodyAfter }) => bodyAfter);
     if (!isValid) throw new Error('found invalid bodyAfter attribute');
     return true;
