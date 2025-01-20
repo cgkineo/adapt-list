@@ -33,7 +33,7 @@ describe('List - v5.2.4 > v5.2.5', async () => {
     if (lists) return true;
   });
   mutateContent('List - add bodyAfter attribute', async content => {
-    lists.forEach(item => (item.bodyAfter = ''));
+    lists.forEach(list => (list.bodyAfter = ''));
     return true;
   });
   checkContent('List - check bodyAfter attribute', async content => {
