@@ -26,12 +26,22 @@ describe('List - v5.1.0 to v5.2.0', async () => {
     });
     return true;
   });
+  checkContent('List - check for _graphic object', async content => {
+    const isValid = lists.every(list =>
+      list._items.every(item =>
+        item._graphic &&
+        ![item._graphic.src, item._graphic.alt, item._graphic.attribution].some(prop => prop === undefined)
+      )
+    );
+    if (!isValid) throw new Error('List - _graphic object not found or is incomplete on items');
+    return true;
+  });
   checkContent('List - check that deprecated _imageSrc and alt were removed', async content => {
     let isValid = true;
     lists.forEach(list => {
       if (list._imageSrc || list.alt) isValid = false;
     });
-    if (!isValid) throw new Error('found deprecated _imageSrc or alt attributes');
+    if (!isValid) throw new Error('List - found deprecated _imageSrc or alt attributes');
     return true;
   });
   updatePlugin('List - update to v5.2.0', { name: 'adapt-list', version: '5.2.0', framework: '>=5.14.0' });
