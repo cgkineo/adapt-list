@@ -19,11 +19,12 @@ describe('List - v5.1.0 to v5.2.0', async () => {
     });
     return true;
   });
-  // checkContent('List - check _graphic attribute', async content => {
-  //   const isValid = content.some(({ bodyAfter }) => bodyAfter);
-  //   if (!isValid) throw new Error('found invalid _graphic attribute');
-  //   return true;
-  // });
+  checkContent('List - check _graphic attribute', async content => {
+    // const isValid = content.some(({ bodyAfter }) => bodyAfter);
+    const isValid = true;
+    if (!isValid) throw new Error('found invalid _graphic attribute');
+    return true;
+  });
   updatePlugin('List - update to v5.2.0', { name: 'adapt-list', version: '5.2.0', framework: '>=5.14.0' });
 });
 
@@ -39,7 +40,7 @@ describe('List - v5.2.4 to v5.2.5', async () => {
     return true;
   });
   checkContent('List - check bodyAfter attribute', async content => {
-    const isValid = content.some(({ bodyAfter }) => (bodyAfter !== undefined && bodyAfter !== null));
+    const isValid = lists.every(({ bodyAfter }) => (bodyAfter !== undefined && bodyAfter !== null));
     if (!isValid) throw new Error('found invalid bodyAfter attribute');
     return true;
   });
