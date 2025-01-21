@@ -13,6 +13,13 @@ describe('List - v5.1.0 to v5.2.0', async () => {
         const src = item._imageSrc;
         const alt = item.alt;
         item._graphic = { src, alt, attribution: '' };
+      });
+    });
+    return true;
+  });
+  mutateContent('List - delete deprecated _imageSrc and alt attributes', async content => {
+    lists.forEach(list => {
+      list._items.forEach(item => {
         delete item._imageSrc;
         delete item.alt;
       });
@@ -20,7 +27,6 @@ describe('List - v5.1.0 to v5.2.0', async () => {
     return true;
   });
   checkContent('List - check _graphic attribute', async content => {
-    // const isValid = content.some(({ bodyAfter }) => bodyAfter);
     const isValid = true;
     if (!isValid) throw new Error('found invalid _graphic attribute');
     return true;
