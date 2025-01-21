@@ -13,6 +13,8 @@ describe('List - v5.1.0 to v5.2.0', async () => {
         const src = item._imageSrc;
         const alt = item.alt;
         item._graphic = { src, alt, attribution: '' };
+        delete item._imageSrc;
+        delete item.alt;
       });
     });
     return true;
