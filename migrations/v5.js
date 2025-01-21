@@ -37,7 +37,7 @@ describe('List - v5.2.4 to v5.2.5', async () => {
     return true;
   });
   checkContent('List - check bodyAfter attribute', async content => {
-    const isValid = content.some(({ bodyAfter }) => bodyAfter);
+    const isValid = content.some(({ bodyAfter }) => (bodyAfter !== undefined && bodyAfter !== null));
     if (!isValid) throw new Error('found invalid bodyAfter attribute');
     return true;
   });
