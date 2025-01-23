@@ -1,8 +1,8 @@
 import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
 
-describe('List - v5.1.0 to v5.2.0', async () => {
+describe('List - v5.1.0 to v5.2.1', async () => {
   let lists;
-  whereFromPlugin('List - from v5.1.0', { name: 'adapt-list', version: '<=5.2.0' });
+  whereFromPlugin('List - from v5.1.0', { name: 'adapt-list', version: '<=5.2.1' });
   whereContent('where content 1', async content => {
     lists = content.filter(({ _component }) => _component === 'list');
     if (lists) return true;
@@ -44,7 +44,7 @@ describe('List - v5.1.0 to v5.2.0', async () => {
     if (!isValid) throw new Error('List - found deprecated _imageSrc or alt attributes');
     return true;
   });
-  updatePlugin('List - update to v5.2.0', { name: 'adapt-list', version: '5.2.0', framework: '>=5.14.0' });
+  updatePlugin('List - update to v5.2.1', { name: 'adapt-list', version: '5.2.1', framework: '>=5.14.0' });
 });
 
 describe('List - v5.2.4 to v5.2.5', async () => {
