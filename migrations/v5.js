@@ -26,6 +26,14 @@ describe('List - v2.0.2 to v5.2.1', async () => {
     });
     return true;
   });
+  mutateContent('List - add _percentInviewVertical attribute', async content => {
+    lists.forEach(list => (list._percentInviewVertical = 70));
+    return true;
+  });
+  mutateContent('List - add _columns attribute', async content => {
+    lists.forEach(list => (list._columns = 0));
+    return true;
+  });
   checkContent('List - check for _graphic object', async content => {
     const isValid = lists.every(list =>
       list._items.every(item =>
@@ -42,6 +50,16 @@ describe('List - v2.0.2 to v5.2.1', async () => {
       if (list._imageSrc || list.alt) isValid = false;
     });
     if (!isValid) throw new Error('List - found deprecated _imageSrc or alt attributes');
+    return true;
+  });
+  checkContent('List - check _columns attribute', async content => {
+    const isValid = lists.every(({ _columns }) => (_columns !== undefined && _columns !== null));
+    if (!isValid) throw new Error('found invalid _columns attribute');
+    return true;
+  });
+  checkContent('List - check _percentInviewVertical attribute', async content => {
+    const isValid = lists.every(({ _percentInviewVertical }) => (_percentInviewVertical !== undefined && _percentInviewVertical !== null));
+    if (!isValid) throw new Error('found invalid _percentInviewVertical attribute');
     return true;
   });
   updatePlugin('List - update to v5.2.1', { name: 'adapt-list', version: '5.2.1', framework: '>=5.14.0' });
