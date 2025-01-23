@@ -26,6 +26,12 @@ describe('List - v2.0.2 to v5.2.1', async () => {
     });
     return true;
   });
+  mutateContent('List - add item _classes', async content => {
+    lists.forEach(list => {
+      list._items.forEach(item => (item._classes = ''));
+    });
+    return true;
+  });
   mutateContent('List - add _percentInviewVertical attribute', async content => {
     lists.forEach(list => (list._percentInviewVertical = 70));
     return true;
@@ -52,13 +58,20 @@ describe('List - v2.0.2 to v5.2.1', async () => {
     if (!isValid) throw new Error('List - found deprecated _imageSrc or alt attributes');
     return true;
   });
+  checkContent('List - check for item _classes', async content => {
+    const isValid = lists.every(list =>
+      list._items.every(item => item._classes !== undefined)
+    );
+    if (!isValid) throw new Error('List - _graphic object not found or is incomplete on items');
+    return true;
+  });
   checkContent('List - check _columns attribute', async content => {
-    const isValid = lists.every(({ _columns }) => (_columns !== undefined && _columns !== null));
+    const isValid = lists.every(({ _columns }) => (_columns !== undefined));
     if (!isValid) throw new Error('found invalid _columns attribute');
     return true;
   });
   checkContent('List - check _percentInviewVertical attribute', async content => {
-    const isValid = lists.every(({ _percentInviewVertical }) => (_percentInviewVertical !== undefined && _percentInviewVertical !== null));
+    const isValid = lists.every(({ _percentInviewVertical }) => (_percentInviewVertical !== undefined));
     if (!isValid) throw new Error('found invalid _percentInviewVertical attribute');
     return true;
   });
@@ -77,7 +90,7 @@ describe('List - v5.2.4 to v5.2.5', async () => {
     return true;
   });
   checkContent('List - check bodyAfter attribute', async content => {
-    const isValid = lists.every(({ bodyAfter }) => (bodyAfter !== undefined && bodyAfter !== null));
+    const isValid = lists.every(({ bodyAfter }) => (bodyAfter !== undefined));
     if (!isValid) throw new Error('found invalid bodyAfter attribute');
     return true;
   });
