@@ -1,8 +1,8 @@
 import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
 
-describe('List - v2.0.2 to v5.2.1', async () => {
+describe('List - v3.3.1 to v5.2.1', async () => {
   let lists;
-  whereFromPlugin('List - from v2.0.2', { name: 'adapt-list', version: '<5.2.1' });
+  whereFromPlugin('List - from v3.3.1', { name: 'adapt-list', version: '<5.2.1' });
   whereContent('where content 1', async content => {
     lists = content.filter(({ _component }) => _component === 'list');
     if (lists) return true;
@@ -36,10 +36,6 @@ describe('List - v2.0.2 to v5.2.1', async () => {
     lists.forEach(list => (list._percentInviewVertical = 70));
     return true;
   });
-  mutateContent('List - add _columns attribute', async content => {
-    lists.forEach(list => (list._columns = 0));
-    return true;
-  });
   checkContent('List - check for _graphic object', async content => {
     const isValid = lists.every(list =>
       list._items.every(item =>
@@ -63,11 +59,6 @@ describe('List - v2.0.2 to v5.2.1', async () => {
       list._items.every(item => item._classes !== undefined)
     );
     if (!isValid) throw new Error('List - _graphic object not found or is incomplete on items');
-    return true;
-  });
-  checkContent('List - check _columns attribute', async content => {
-    const isValid = lists.every(({ _columns }) => (_columns !== undefined));
-    if (!isValid) throw new Error('found invalid _columns attribute');
     return true;
   });
   checkContent('List - check _percentInviewVertical attribute', async content => {
