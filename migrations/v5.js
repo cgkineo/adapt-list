@@ -1,8 +1,8 @@
 import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
 
-describe('List - v3.3.1 to v5.2.1', async () => {
+describe('List - v3.3.1 to v5.2.0', async () => {
   let lists;
-  whereFromPlugin('List - from v3.3.1', { name: 'adapt-list', version: '<5.2.1' });
+  whereFromPlugin('List - from v3.3.1', { name: 'adapt-list', version: '<5.2.0' });
   whereContent('where content 1', async content => {
     lists = content.filter(({ _component }) => _component === 'list');
     if (lists) return true;
@@ -32,8 +32,12 @@ describe('List - v3.3.1 to v5.2.1', async () => {
     });
     return true;
   });
-  mutateContent('List - add _percentInviewVertical attribute', async content => {
-    lists.forEach(list => (list._percentInviewVertical = 70));
+  mutateContent('List - add _itemHorizontalAlignment', async content => {
+    lists.forEach(list => (list._itemHorizontalAlignment = 'start'));
+    return true;
+  });
+  mutateContent('List - add _bulletAlignment', async content => {
+    lists.forEach(list => (list._bulletAlignment = 'start'));
     return true;
   });
   checkContent('List - check for _graphic object', async content => {
@@ -61,17 +65,22 @@ describe('List - v3.3.1 to v5.2.1', async () => {
     if (!isValid) throw new Error('List - _graphic object not found or is incomplete on items');
     return true;
   });
-  checkContent('List - check _percentInviewVertical attribute', async content => {
-    const isValid = lists.every(({ _percentInviewVertical }) => (_percentInviewVertical !== undefined));
-    if (!isValid) throw new Error('found invalid _percentInviewVertical attribute');
+  checkContent('List - check _itemHorizontalAlignment attribute', async content => {
+    const isValid = lists.every(({ _itemHorizontalAlignment }) => (_itemHorizontalAlignment !== undefined));
+    if (!isValid) throw new Error('found invalid _itemHorizontalAlignment attribute');
     return true;
   });
-  updatePlugin('List - update to v5.2.1', { name: 'adapt-list', version: '5.2.1', framework: '>=5.14.0' });
+  checkContent('List - check _bulletAlignment attribute', async content => {
+    const isValid = lists.every(({ _bulletAlignment }) => (_bulletAlignment !== undefined));
+    if (!isValid) throw new Error('found invalid _itemHorizontalAlignment attribute');
+    return true;
+  });
+  updatePlugin('List - update to v5.2.0', { name: 'adapt-list', version: '5.2.0', framework: '>=5.14.0' });
 });
 
-describe('List - v5.2.4 to v5.2.5', async () => {
+describe('List - v5.2.2 to v5.2.5', async () => {
   let lists;
-  whereFromPlugin('List - from v5.2.4', { name: 'adapt-list', version: '<=5.2.4' });
+  whereFromPlugin('List - from v5.2.2', { name: 'adapt-list', version: '<5.2.5' });
   whereContent('where content 1', async content => {
     lists = content.filter(({ _component }) => _component === 'list');
     if (lists) return true;
