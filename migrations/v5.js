@@ -10,8 +10,9 @@ describe('List - v3.3.0 to v5.2.0', async () => {
   mutateContent('List - change _imageSrc attribute to _graphic object attribute', async content => {
     lists.forEach(list => {
       list._items.forEach(item => {
-        const src = item._imageSrc;
-        const alt = item.alt;
+        item._graphic = {};
+        const src = item._imageSrc || '';
+        const alt = item.alt || '';
         item._graphic = { src, alt, attribution: '' };
       });
     });
