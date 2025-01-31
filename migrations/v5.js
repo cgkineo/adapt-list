@@ -5,7 +5,7 @@ describe('List - v3.3.0 to v5.2.0', async () => {
   whereFromPlugin('List - from v3.3.0', { name: 'adapt-list', version: '<5.2.0' });
   whereContent('where content 1', async content => {
     lists = content.filter(({ _component }) => _component === 'list');
-    if (lists) return true;
+    return lists.length;
   });
   mutateContent('List - change _imageSrc attribute to _graphic object attribute', async content => {
     lists.forEach(list => {
@@ -83,7 +83,7 @@ describe('List - v5.2.0 to v5.2.5', async () => {
   whereFromPlugin('List - from v5.2.0', { name: 'adapt-list', version: '<5.2.5' });
   whereContent('where content 1', async content => {
     lists = content.filter(({ _component }) => _component === 'list');
-    if (lists) return true;
+    return lists.length;
   });
   mutateContent('List - add bodyAfter attribute', async content => {
     lists.forEach(list => (list.bodyAfter = ''));

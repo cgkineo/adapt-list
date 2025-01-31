@@ -5,7 +5,7 @@ describe('List - v2.0.2 to v3.0.0', async () => {
   whereFromPlugin('List - from v2.0.2', { name: 'adapt-list', version: '<3.0.0' });
   whereContent('where content 1', async content => {
     lists = content.filter(({ _component }) => _component === 'list');
-    if (lists) return true;
+    return lists.length;
   });
   mutateContent('List - add item body', async content => {
     lists.forEach(list => {
@@ -28,7 +28,7 @@ describe('List - v3.0.0 to v3.2.0', async () => {
   whereFromPlugin('List - from v3.0.0', { name: 'adapt-list', version: '<3.2.0' });
   whereContent('where content 1', async content => {
     lists = content.filter(({ _component }) => _component === 'list');
-    if (lists) return true;
+    return lists.length;
   });
   mutateContent('List - add _percentInviewVertical attribute', async content => {
     lists.forEach(list => (list._percentInviewVertical = 70));
@@ -47,7 +47,7 @@ describe('List - v3.2.0 to v3.3.0', async () => {
   whereFromPlugin('List - from v3.2.0', { name: 'adapt-list', version: '<3.3.0' });
   whereContent('where content 1', async content => {
     lists = content.filter(({ _component }) => _component === 'list');
-    if (lists) return true;
+    return lists.length;
   });
   mutateContent('List - add _columns attribute', async content => {
     lists.forEach(list => (list._columns = 0));
