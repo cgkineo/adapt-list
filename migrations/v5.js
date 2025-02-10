@@ -1,4 +1,5 @@
 import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
+import _ from 'lodash';
 
 describe('List - v3.3.0 to v5.2.0', async () => {
   let lists;
@@ -7,29 +8,48 @@ describe('List - v3.3.0 to v5.2.0', async () => {
     lists = content.filter(({ _component }) => _component === 'list');
     return lists.length;
   });
-  mutateContent('List - change _imageSrc attribute to _graphic object attribute', async content => {
+  mutateContent('List - add _graphic object', async content => {
     lists.forEach(list => {
       list._items.forEach(item => {
-        const src = item._imageSrc || '';
-        const alt = item.alt || '';
-        item._graphic = { src, alt, attribution: '' };
+        if (!_.has(item, '_graphic')) _.set(item, '_graphic', {});
       });
     });
     return true;
   });
-  mutateContent('List - delete deprecated _imageSrc and alt attributes', async content => {
+  mutateContent('List - add _graphic alt attribute', async content => {
     lists.forEach(list => {
       list._items.forEach(item => {
-        delete item._imageSrc;
-        delete item.alt;
+        _.set(item._graphic, 'alt', item.alt || '');
       });
     });
+    return true;
+  });
+  mutateContent('List - add _graphic attribution attribute', async content => {
+    lists.forEach(list => {
+      list._items.forEach(item => {
+        _.set(item._graphic, 'attribution', '');
+      });
+    });
+    return true;
+  });
+  mutateContent('List - add _graphic src attribute', async content => {
+    lists.forEach(list => {
+      list._items.forEach(item => {
+        _.set(item._graphic, 'src', item._imageSrc || '');
+      });
+    });
+    return true;
+  });
+  mutateContent('List - delete deprecated _imageSrc attribute', async content => {
+    lists.forEach(list => { list._items.forEach(item => (delete item._imageSrc)); });
+    return true;
+  });
+  mutateContent('List - delete deprecated alt attribute', async content => {
+    lists.forEach(list => { list._items.forEach(item => (delete item.alt)); });
     return true;
   });
   mutateContent('List - add item _classes', async content => {
-    lists.forEach(list => {
-      list._items.forEach(item => (item._classes = ''));
-    });
+    lists.forEach(list => { list._items.forEach(item => (item._classes = '')); });
     return true;
   });
   mutateContent('List - add _itemHorizontalAlignment', async content => {
@@ -41,28 +61,38 @@ describe('List - v3.3.0 to v5.2.0', async () => {
     return true;
   });
   checkContent('List - check for _graphic object', async content => {
-    const isValid = lists.every(list =>
-      list._items.every(item =>
-        item._graphic &&
-        ![item._graphic.src, item._graphic.alt, item._graphic.attribution].some(prop => prop === undefined)
-      )
-    );
-    if (!isValid) throw new Error('List - _graphic object not found or is incomplete on items');
+    const isValid = lists.every(list => list._items.every(item => item._graphic));
+    if (!isValid) throw new Error('List - _graphic object invalid');
     return true;
   });
-  checkContent('List - check that deprecated _imageSrc and alt were removed', async content => {
-    let isValid = true;
-    lists.forEach(list => {
-      if (list._imageSrc || list.alt) isValid = false;
-    });
-    if (!isValid) throw new Error('List - found deprecated _imageSrc or alt attributes');
+  checkContent('List - check for _graphic alt attribute', async content => {
+    const isValid = lists.every(list => list._items.every(item => (_.has(item._graphic, 'alt'))));
+    if (!isValid) throw new Error('List - _graphic alt object invalid');
+    return true;
+  });
+  checkContent('List - check for _graphic attribution attribute', async content => {
+    const isValid = lists.every(list => list._items.every(item => (_.has(item._graphic, 'attribution'))));
+    if (!isValid) throw new Error('List - _graphic attribution object invalid');
+    return true;
+  });
+  checkContent('List - check for _graphic src attribute', async content => {
+    const isValid = lists.every(list => list._items.every(item => (_.has(item._graphic, 'src'))));
+    if (!isValid) throw new Error('List - _graphic src object invalid');
+    return true;
+  });
+  checkContent('List - check that deprecated _imageSrc was removed', async content => {
+    const isValid = lists.every(list => list._imageSrc === undefined);
+    if (!isValid) throw new Error('List - found deprecated _imageSrc attributes');
+    return true;
+  });
+  checkContent('List - check that deprecated alt was removed', async content => {
+    const isValid = lists.every(list => list.alt === undefined);
+    if (!isValid) throw new Error('List - found deprecated alt attributes');
     return true;
   });
   checkContent('List - check for item _classes', async content => {
-    const isValid = lists.every(list =>
-      list._items.every(item => item._classes !== undefined)
-    );
-    if (!isValid) throw new Error('List - _graphic object not found or is incomplete on items');
+    const isValid = lists.every(list => list._items.every(item => item._classes !== undefined));
+    if (!isValid) throw new Error('List - found item _classes is invalid');
     return true;
   });
   checkContent('List - check _itemHorizontalAlignment attribute', async content => {

@@ -20,7 +20,7 @@ describe('List - v2.0.2 to v3.0.0', async () => {
     if (!isValid) throw new Error('List - found invalid item body');
     return true;
   });
-  updatePlugin('List - update to v3.0.0', { name: 'adapt-list', version: '3.0.0', framework: '>=5' });
+  updatePlugin('List - update to v3.0.0', { name: 'adapt-list', version: '3.0.0', framework: '>=5.0.0' });
 });
 
 describe('List - v3.0.0 to v3.2.0', async () => {
@@ -35,11 +35,11 @@ describe('List - v3.0.0 to v3.2.0', async () => {
     return true;
   });
   checkContent('List - check _percentInviewVertical attribute', async content => {
-    const isValid = lists.every(({ _percentInviewVertical }) => (_percentInviewVertical !== undefined));
+    const isValid = lists.every(({ _percentInviewVertical }) => (_percentInviewVertical === 70));
     if (!isValid) throw new Error('found invalid _percentInviewVertical attribute');
     return true;
   });
-  updatePlugin('List - update to v3.2.0', { name: 'adapt-list', version: '3.2.0', framework: '>=5' });
+  updatePlugin('List - update to v3.2.0', { name: 'adapt-list', version: '3.2.0', framework: '>=5.0.0' });
 });
 
 describe('List - v3.2.0 to v3.3.0', async () => {
@@ -54,9 +54,9 @@ describe('List - v3.2.0 to v3.3.0', async () => {
     return true;
   });
   checkContent('List - check _columns attribute', async content => {
-    const isValid = lists.every(({ _columns }) => (_columns !== undefined));
+    const isValid = lists.every(({ _columns }) => (_columns === 0));
     if (!isValid) throw new Error('found invalid _columns attribute');
     return true;
   });
-  updatePlugin('List - update to v3.3.0', { name: 'adapt-list', version: '3.3.0', framework: '>=5' });
+  updatePlugin('List - update to v3.3.0', { name: 'adapt-list', version: '3.3.0', framework: '>=5.0.0' });
 });
