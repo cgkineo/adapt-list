@@ -10,33 +10,25 @@ describe('List - v3.3.0 to v5.2.0', async () => {
   });
   mutateContent('List - add _graphic object', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => {
-        if (!_.has(item, '_graphic')) _.set(item, '_graphic', {});
-      });
+      list._items.forEach(item => { if (!_.has(item, '_graphic')) _.set(item, '_graphic', {}); });
     });
     return true;
   });
   mutateContent('List - add _graphic alt attribute', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => {
-        _.set(item._graphic, 'alt', item.alt || '');
-      });
+      list._items.forEach(item => { _.set(item._graphic, 'alt', item.alt || ''); });
     });
     return true;
   });
   mutateContent('List - add _graphic attribution attribute', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => {
-        _.set(item._graphic, 'attribution', '');
-      });
+      list._items.forEach(item => { _.set(item._graphic, 'attribution', ''); });
     });
     return true;
   });
   mutateContent('List - add _graphic src attribute', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => {
-        _.set(item._graphic, 'src', item._imageSrc || '');
-      });
+      list._items.forEach(item => { _.set(item._graphic, 'src', item._imageSrc || ''); });
     });
     return true;
   });
@@ -82,26 +74,26 @@ describe('List - v3.3.0 to v5.2.0', async () => {
   });
   checkContent('List - check that deprecated _imageSrc was removed', async content => {
     const isValid = lists.every(list => list._imageSrc === undefined);
-    if (!isValid) throw new Error('List - found deprecated _imageSrc attributes');
+    if (!isValid) throw new Error('List - found deprecated _imageSrc attribute');
     return true;
   });
   checkContent('List - check that deprecated alt was removed', async content => {
     const isValid = lists.every(list => list.alt === undefined);
-    if (!isValid) throw new Error('List - found deprecated alt attributes');
+    if (!isValid) throw new Error('List - found deprecated alt attribute');
     return true;
   });
   checkContent('List - check for item _classes', async content => {
-    const isValid = lists.every(list => list._items.every(item => item._classes !== undefined));
+    const isValid = lists.every(list => list._items.every(item => item._classes === ''));
     if (!isValid) throw new Error('List - found item _classes is invalid');
     return true;
   });
   checkContent('List - check _itemHorizontalAlignment attribute', async content => {
-    const isValid = lists.every(({ _itemHorizontalAlignment }) => (_itemHorizontalAlignment !== undefined));
+    const isValid = lists.every(({ _itemHorizontalAlignment }) => (_itemHorizontalAlignment === 'start'));
     if (!isValid) throw new Error('found invalid _itemHorizontalAlignment attribute');
     return true;
   });
   checkContent('List - check _bulletAlignment attribute', async content => {
-    const isValid = lists.every(({ _bulletAlignment }) => (_bulletAlignment !== undefined));
+    const isValid = lists.every(({ _bulletAlignment }) => (_bulletAlignment === 'start'));
     if (!isValid) throw new Error('found invalid _itemHorizontalAlignment attribute');
     return true;
   });
@@ -120,7 +112,7 @@ describe('List - v5.2.0 to v5.2.5', async () => {
     return true;
   });
   checkContent('List - check bodyAfter attribute', async content => {
-    const isValid = lists.every(({ bodyAfter }) => (bodyAfter !== undefined));
+    const isValid = lists.every(({ bodyAfter }) => (bodyAfter === ''));
     if (!isValid) throw new Error('found invalid bodyAfter attribute');
     return true;
   });
