@@ -19,9 +19,9 @@ describe('List - v2.0.2 to v3.0.0', async () => {
   updatePlugin('List - update to v3.0.0', { name: 'adapt-list', version: '3.0.0', framework: '>=5.0.0' });
 });
 
-describe('List - v3.0.0 to v3.2.0', async () => {
+describe('List - v3.1.2 to v3.2.0', async () => {
   let lists;
-  whereFromPlugin('List - from v3.0.0', { name: 'adapt-list', version: '<3.2.0' });
+  whereFromPlugin('List - from v3.1.2', { name: 'adapt-list', version: '<3.2.0' });
   whereContent('where content 1', async content => {
     lists = content.filter(({ _component }) => _component === 'list');
     return lists.length;
