@@ -1,4 +1,4 @@
-import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
+import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin, testStopWhere, testSuccessWhere } from 'adapt-migrations';
 import _ from 'lodash';
 
 describe('List - v5.1.0 to v5.2.0', async () => {
@@ -98,6 +98,23 @@ describe('List - v5.1.0 to v5.2.0', async () => {
     return true;
   });
   updatePlugin('List - update to v5.2.0', { name: 'adapt-list', version: '5.2.0', framework: '>=5.14.0' });
+
+  testSuccessWhere('correct version with list components', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '5.1.0' }],
+    content: [
+      { _id: 'c-100', _component: 'list' },
+      { _id: 'c-105', _component: 'list' }
+    ]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '5.2.0' }]
+  });
+
+  testStopWhere('no list components', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '5.1.0' }],
+    content: [{ _component: 'other' }]
+  });
 });
 
 describe('List - v5.2.4 to v5.2.5', async () => {
@@ -117,4 +134,21 @@ describe('List - v5.2.4 to v5.2.5', async () => {
     return true;
   });
   updatePlugin('List - update to v5.2.5', { name: 'adapt-list', version: '5.2.5', framework: '>=5.14.0' });
+
+  testSuccessWhere('correct version with list components', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '5.2.4' }],
+    content: [
+      { _id: 'c-100', _component: 'list' },
+      { _id: 'c-105', _component: 'list' }
+    ]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '5.2.5' }]
+  });
+
+  testStopWhere('no list components', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '5.2.4' }],
+    content: [{ _component: 'other' }]
+  });
 });

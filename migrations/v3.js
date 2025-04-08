@@ -1,4 +1,4 @@
-import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin } from 'adapt-migrations';
+import { describe, whereContent, whereFromPlugin, mutateContent, checkContent, updatePlugin, testStopWhere, testSuccessWhere } from 'adapt-migrations';
 
 describe('List - v2.0.2 to v3.0.0', async () => {
   let lists;
@@ -17,6 +17,23 @@ describe('List - v2.0.2 to v3.0.0', async () => {
     return true;
   });
   updatePlugin('List - update to v3.0.0', { name: 'adapt-list', version: '3.0.0', framework: '>=5.0.0' });
+
+  testSuccessWhere('correct version with list components', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '2.0.2' }],
+    content: [
+      { _id: 'c-100', _component: 'list' },
+      { _id: 'c-105', _component: 'list' }
+    ]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '3.0.0' }]
+  });
+
+  testStopWhere('no list components', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '2.0.2' }],
+    content: [{ _component: 'other' }]
+  });
 });
 
 describe('List - v3.1.2 to v3.2.0', async () => {
@@ -36,6 +53,23 @@ describe('List - v3.1.2 to v3.2.0', async () => {
     return true;
   });
   updatePlugin('List - update to v3.2.0', { name: 'adapt-list', version: '3.2.0', framework: '>=5.0.0' });
+
+  testSuccessWhere('correct version with list components', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '3.1.2' }],
+    content: [
+      { _id: 'c-100', _component: 'list' },
+      { _id: 'c-105', _component: 'list' }
+    ]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '3.2.0' }]
+  });
+
+  testStopWhere('no list components', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '3.1.2' }],
+    content: [{ _component: 'other' }]
+  });
 });
 
 describe('List - v3.2.0 to v3.3.0', async () => {
@@ -55,4 +89,21 @@ describe('List - v3.2.0 to v3.3.0', async () => {
     return true;
   });
   updatePlugin('List - update to v3.3.0', { name: 'adapt-list', version: '3.3.0', framework: '>=5.0.0' });
+
+  testSuccessWhere('correct version with list components', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '3.2.0' }],
+    content: [
+      { _id: 'c-100', _component: 'list' },
+      { _id: 'c-105', _component: 'list' }
+    ]
+  });
+
+  testStopWhere('incorrect version', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '3.3.0' }]
+  });
+
+  testStopWhere('no list components', {
+    fromPlugins: [{ name: 'adapt-contrib-list', version: '3.2.0' }],
+    content: [{ _component: 'other' }]
+  });
 });
