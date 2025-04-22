@@ -16,7 +16,7 @@ describe('List - v5.1.0 to v5.2.0', async () => {
   });
   mutateContent('List - add _graphic alt attribute', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => { _.set(item._graphic, 'alt', item.alt || ''); });
+      list._items.forEach(item => _.set(item._graphic, 'alt', item.alt || ''));
     });
     return true;
   });
