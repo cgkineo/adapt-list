@@ -8,7 +8,7 @@ describe('List - v2.0.2 to v3.0.0', async () => {
     return lists.length;
   });
   mutateContent('List - add item body', async content => {
-    lists.forEach(list => { list._items.forEach(item => (item.body = '')); });
+    lists.forEach(list => list._items.forEach(item => (item.body = '')));
     return true;
   });
   checkContent('List - check item body attribute', async content => {
