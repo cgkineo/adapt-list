@@ -84,7 +84,7 @@ describe('List - v3.2.0 to v3.3.0', async () => {
     return true;
   });
   checkContent('List - check _columns attribute', async content => {
-    const isValid = lists.every(({ _columns }) => (_columns === 0));
+    const isValid = lists.every(({ _columns }) => _columns === 0);
     if (!isValid) throw new Error('found invalid _columns attribute');
     return true;
   });

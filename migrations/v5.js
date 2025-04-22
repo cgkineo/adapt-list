@@ -30,21 +30,19 @@ describe('List - v5.1.0 to v5.2.0', async () => {
   });
   mutateContent('List - add _graphic src attribute', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => {
-        _.set(item._graphic, 'src', item._imageSrc ?? '');
-      });
+      list._items.forEach(item => _.set(item._graphic, 'src', item._imageSrc ?? ''));
     });
     return true;
   });
   mutateContent('List - delete deprecated _imageSrc attribute', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => (delete item._imageSrc));
+      list._items.forEach(item => delete item._imageSrc);
     });
     return true;
   });
   mutateContent('List - delete deprecated alt attribute', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => (delete item.alt));
+      list._items.forEach(item => delete item.alt);
     });
     return true;
   });
@@ -119,7 +117,7 @@ describe('List - v5.1.0 to v5.2.0', async () => {
     return true;
   });
   checkContent('List - check _bulletAlignment attribute', async content => {
-    const isValid = lists.every(({ _bulletAlignment }) => (_bulletAlignment === 'start'));
+    const isValid = lists.every(({ _bulletAlignment }) => _bulletAlignment === 'start');
     if (!isValid) throw new Error('found invalid _itemHorizontalAlignment attribute');
     return true;
   });
