@@ -48,7 +48,7 @@ describe('List - v3.1.2 to v3.2.0', async () => {
     return true;
   });
   checkContent('List - check _percentInviewVertical attribute', async content => {
-    const isValid = lists.every(({ _percentInviewVertical }) => (_percentInviewVertical === 70));
+    const isValid = lists.every(({ _percentInviewVertical }) => _percentInviewVertical === 70);
     if (!isValid) throw new Error('found invalid _percentInviewVertical attribute');
     return true;
   });
