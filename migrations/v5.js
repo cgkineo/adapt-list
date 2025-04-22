@@ -18,7 +18,7 @@ describe('List - v5.1.0 to v5.2.0', async () => {
   });
   mutateContent('List - add _graphic alt attribute', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => _.set(item._graphic, 'alt', item.alt || ''));
+      list._items.forEach(item => _.set(item._graphic, 'alt', item.alt ?? ''));
     });
     return true;
   });
@@ -30,20 +30,28 @@ describe('List - v5.1.0 to v5.2.0', async () => {
   });
   mutateContent('List - add _graphic src attribute', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => _.set(item._graphic, 'src', item._imageSrc || ''));
+      list._items.forEach(item => {
+        _.set(item._graphic, 'src', item._imageSrc ?? '');
+      });
     });
     return true;
   });
   mutateContent('List - delete deprecated _imageSrc attribute', async content => {
-    lists.forEach(list => { list._items.forEach(item => (delete item._imageSrc)); });
+    lists.forEach(list => {
+      list._items.forEach(item => (delete item._imageSrc));
+    });
     return true;
   });
   mutateContent('List - delete deprecated alt attribute', async content => {
-    lists.forEach(list => { list._items.forEach(item => (delete item.alt)); });
+    lists.forEach(list => {
+      list._items.forEach(item => (delete item.alt));
+    });
     return true;
   });
   mutateContent('List - add item _classes', async content => {
-    lists.forEach(list => { list._items.forEach(item => (item._classes = '')); });
+    lists.forEach(list => {
+      list._items.forEach(item => (item._classes = ''));
+    });
     return true;
   });
   mutateContent('List - add _itemHorizontalAlignment', async content => {
@@ -55,22 +63,36 @@ describe('List - v5.1.0 to v5.2.0', async () => {
     return true;
   });
   checkContent('List - check for _graphic object', async content => {
-    const isValid = lists.every(list => list._items.every(item => item._graphic));
+    const isValid = lists.every(list =>
+      list._items.every(item => item._graphic)
+    );
     if (!isValid) throw new Error('List - _graphic object invalid');
     return true;
   });
   checkContent('List - check for _graphic alt attribute', async content => {
-    const isValid = lists.every(list => list._items.every(item => (_.has(item._graphic, 'alt'))));
+    const isValid = lists.every(list =>
+      list._items.every(item =>
+        (_.has(item._graphic, 'alt'))
+      )
+    );
     if (!isValid) throw new Error('List - _graphic alt object invalid');
     return true;
   });
   checkContent('List - check for _graphic attribution attribute', async content => {
-    const isValid = lists.every(list => list._items.every(item => (_.has(item._graphic, 'attribution'))));
+    const isValid = lists.every(list =>
+      list._items.every(item =>
+        (_.has(item._graphic, 'attribution'))
+      )
+    );
     if (!isValid) throw new Error('List - _graphic attribution object invalid');
     return true;
   });
   checkContent('List - check for _graphic src attribute', async content => {
-    const isValid = lists.every(list => list._items.every(item => (_.has(item._graphic, 'src'))));
+    const isValid = lists.every(list =>
+      list._items.every(item =>
+        _.has(item._graphic, 'src')
+      )
+    );
     if (!isValid) throw new Error('List - _graphic src object invalid');
     return true;
   });
@@ -85,12 +107,14 @@ describe('List - v5.1.0 to v5.2.0', async () => {
     return true;
   });
   checkContent('List - check for item _classes', async content => {
-    const isValid = lists.every(list => list._items.every(item => item._classes === ''));
+    const isValid = lists.every(list =>
+      list._items.every(item => item._classes === '')
+    );
     if (!isValid) throw new Error('List - found item _classes is invalid');
     return true;
   });
   checkContent('List - check _itemHorizontalAlignment attribute', async content => {
-    const isValid = lists.every(({ _itemHorizontalAlignment }) => (_itemHorizontalAlignment === 'start'));
+    const isValid = lists.every(({ _itemHorizontalAlignment }) => _itemHorizontalAlignment === 'start');
     if (!isValid) throw new Error('found invalid _itemHorizontalAlignment attribute');
     return true;
   });
@@ -131,7 +155,7 @@ describe('List - v5.2.4 to v5.2.5', async () => {
     return true;
   });
   checkContent('List - check bodyAfter attribute', async content => {
-    const isValid = lists.every(({ bodyAfter }) => (bodyAfter === ''));
+    const isValid = lists.every(({ bodyAfter }) => bodyAfter === '');
     if (!isValid) throw new Error('found invalid bodyAfter attribute');
     return true;
   });
