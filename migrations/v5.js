@@ -10,8 +10,8 @@ describe('List - v5.1.0 to v5.2.0', async () => {
   });
   mutateContent('List - add _graphic object', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => { 
-        if (!_.has(item, '_graphic')) _.set(item, '_graphic', {}); 
+      list._items.forEach(item => {
+        if (!_.has(item, '_graphic')) _.set(item, '_graphic', {});
       });
     });
     return true;
