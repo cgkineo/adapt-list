@@ -22,13 +22,13 @@ describe('List - v5.1.0 to v5.2.0', async () => {
   });
   mutateContent('List - add _graphic attribution attribute', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => { _.set(item._graphic, 'attribution', ''); });
+      list._items.forEach(item => _.set(item._graphic, 'attribution', ''));
     });
     return true;
   });
   mutateContent('List - add _graphic src attribute', async content => {
     lists.forEach(list => {
-      list._items.forEach(item => { _.set(item._graphic, 'src', item._imageSrc || ''); });
+      list._items.forEach(item => _.set(item._graphic, 'src', item._imageSrc || ''));
     });
     return true;
   });
