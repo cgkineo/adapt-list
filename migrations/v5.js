@@ -72,7 +72,7 @@ describe('List - v5.1.0 to v5.2.0', async () => {
   checkContent('List - check for _graphic alt attribute', async content => {
     const isValid = lists.every(list =>
       list._items.every(item =>
-        (_.has(item._graphic, 'alt'))
+        _.has(item._graphic, 'alt')
       )
     );
     if (!isValid) throw new Error('List - _graphic alt object invalid');
@@ -81,7 +81,7 @@ describe('List - v5.1.0 to v5.2.0', async () => {
   checkContent('List - check for _graphic attribution attribute', async content => {
     const isValid = lists.every(list =>
       list._items.every(item =>
-        (_.has(item._graphic, 'attribution'))
+        _.has(item._graphic, 'attribution')
       )
     );
     if (!isValid) throw new Error('List - _graphic attribution object invalid');
