@@ -7,7 +7,7 @@
         "_layout": "full",
         "title": "List component",
         "displayTitle": "List component",
-        "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.<br/><br/>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "body": "<b>List</b> is a presentation component which displays text in a list. The list items can be displayed with or without an image. If no image is defined then either a plain bullet (unordered) or numerical bullet that counts upwards per item (ordered) will display.",
         "instruction": "",
         "_columns": 0,
         "_orderedList": false,
@@ -27,7 +27,7 @@
                 }
             },
             {
-                "title": "Lorem ipsum dolor sit amet",
+                "title": "Adipisicing Lorem aliqua officia laborum",
                 "body": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.",
                 "_classes": "",
                 "_graphic": {
@@ -37,7 +37,7 @@
                 }
             },
             {
-                "title": "Lorem ipsum dolor sit amet",
+                "title": "Amet eu deserunt exercitation mollit",
                 "body": "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
                 "_classes": "",
                 "_graphic": {
