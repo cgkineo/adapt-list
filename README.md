@@ -75,7 +75,7 @@ This is the body text that will appear after the list items.
 No known limitations.
 
 ----------------------------
-**Author / maintainer:** Kineo <br>
+**Author / maintainer:** Mindtools Kineo <br>
 **Accessibility support:** WAI AA <br>
 **RTL support:** Yes <br>
-**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE11, Safari 14 for macOS/iOS/iPadOS, Opera <br>
+**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, Safari for macOS/iOS/iPadOS, Opera<br>
