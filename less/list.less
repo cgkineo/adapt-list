@@ -145,7 +145,10 @@
     position: relative;
     right: -100%;
     opacity: 0;
-    .transition(all .8s ease-in-out);
+
+    @media (prefers-reduced-motion: no-preference) {
+      .transition(all .8s ease-in-out);
+    }
 
     .dir-rtl & {
       right: inherit;
